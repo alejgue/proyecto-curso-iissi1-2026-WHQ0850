@@ -1,9 +1,9 @@
 # Título Proyecto
 
-## Miembros del grupo LX-XXX-X (sustituir)
+## Miembros del grupo L6-DF-5
 
-1. Apellidos, Nombre
-1. Apellidos, Nombre
+1. Guerrero Fuentes, Alexandro
+1. Leon Galdino, Marianna Andrea
 1. Apellidos, Nombre
 1. Apellidos, Nombre
 
