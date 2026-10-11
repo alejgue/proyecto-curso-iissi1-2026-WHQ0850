@@ -1,4 +1,4 @@
-# Título Proyecto
+# Rincón del Libro
 
 ## Miembros del grupo L6-DF-5
 
@@ -19,7 +19,61 @@
 
 ### 3.1. Requisitos generales
 
-### 3.2. Usuarios del sistema
+El sistema deberá cumplir los siguientes requisitos generales:
+  - Almacenamiento centralizado: toda la información relevante de la biblioteca deberá almacenarse de forma organizada en una base de datos.
+  - Gestión de usuarios: el sistema permitirá distinguir entre clientes y gestores y controlar las operaciones que puede realizar cada tipo de usuario.
+  - Gestión del catálogo: se podrán registrar y consultar libros y sus creadores.
+  - Gestión de ejemplares: cada copia física estará identificada individualmente y asociada a un libro, una sucursal, y constara si esta alquilada y su estado de conservación.
+  - Gestión de sucursales: se almacenará la información de las diferentes sucursales de la biblioteca.
+  - Gestión de Alquileres: el sistema permitirá registrar préstamos, controlar las fechas previstas de devolución y registrar las devoluciones.
+  - Consulta de disponibilidad: se podrá conocer qué ejemplares están disponibles para nuevos préstamos.
+  - Integridad de la información: la base de datos deberá impedir registros incoherentes y referencias a elementos inexistentes.
+  - Seguridad: las operaciones administrativas estarán restringidas a los usuarios autorizados.
+  - Consulta del historial: los préstamos anteriores se conservarán para poder consultar las operaciones realizadas.
+
+    
+### 3.2. Usuarios del sistema 
+
+El sistema contiene una entidad general denominada "Usuario", que representa a las personas registradas en la biblioteca. Esta entidad se especializa en dos tipos de usuarios: Cliente y Gestor.
+
+La especialización es incompleta y disjunta. Es incompleta porque, en el modelo conceptual, podría haber usuarios que no pertenezcan a ninguna de las dos especializaciones, aunque la regla de negocio establece que todos los usuarios registrados deben ser clientes o gestores. Es disjunta porque un mismo usuario no puede ser simultáneamente cliente y gestor.
+
+- Usuario (generalización)
+
+Representa a una persona registrada en el sistema y almacena los datos comunes a todos los usuarios:
+
+-- Nombre.
+-- Apellidos.
+-- Email.
+-- Teléfono.
+-- Dirección.
+-- Fecha de registro.
+-- Estado [Activo, Suspendido].
+
+Esta entidad permite centralizar los datos comunes y evitar su duplicación en las especializaciones.
+
+- Cliente (socio)
+
+Es una especialización de Usuario que representa a las personas que utilizan los servicios de préstamo de la biblioteca.
+
+Sus atributos específicos son:
+
+-- Número de socio (identifica de forma única a cada cliente).
+-- Fecha de alta.
+-- Sanción (opcional, permitiendo indicar si el cliente tiene alguna sanción registrada).
+
+Los clientes pueden consultar el catálogo de libros, conocer la disponibilidad de los ejemplares y realizar alquileres de copias físicas, cumpliendo las condiciones establecidas por la biblioteca.
+
+- Gestor (empleado)
+
+Es una especialización de Usuario que representa al personal encargado de administrar el sistema de la biblioteca.
+
+Su atributo específico es:
+
+-- Número de empleado, que identifica de forma única a cada gestor.
+
+Los gestores son responsables de mantener actualizado el catálogo, registrar y administrar las copias físicas, gestionar los alquileres y las devoluciones, y realizar consultas y listados necesarios para el funcionamiento de la biblioteca. De igual forma, cada gestor estará asociado a la sucursal cuya gestión tenga asignada.
+
 
 ## 4. Catálogo de requisitos
 
