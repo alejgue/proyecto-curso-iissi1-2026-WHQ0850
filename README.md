@@ -15,6 +15,49 @@ El objetivo principal del proyecto es desarrollar una base de datos que permita 
 La biblioteca necesita disponer de un sistema centralizado que permita conocer en todo momento qué libros forman parte de su catálogo, cuántos ejemplares existen de cada obra, en qué sucursal se encuentra cada ejemplar y cuáles están disponibles para ser prestados. Asimismo, es necesario mantener un registro de los préstamos y las devoluciones para poder consultar qué usuarios tienen libros prestados y cuándo deben devolverlos.
 Para satisfacer estas necesidades, se propone diseñar e implementar una base de datos relacional que permita gestionar la información de forma estructurada, segura y consistente.
 
+### 1.2. Clientes y usuarios
+El sistema estará destinado a dos tipos principales de usuarios:
+
+- Clientes: personas que utilizan los servicios de la biblioteca para consultar el catálogo y solicitar préstamos de libros. Necesitan conocer qué obras están disponibles y consultar la información de sus préstamos.
+- Gestores: trabajadores responsables de administrar la biblioteca. Se encargarán de mantener actualizado el catálogo, registrar ejemplares, gestionar las sucursales, administrar los usuarios y registrar los préstamos y las devoluciones.
+  
+Cada tipo de usuario tendrá unas responsabilidades diferentes. Mientras que los clientes estarán orientados a la consulta de información y al uso del servicio de préstamo, los gestores dispondrán de funcionalidades administrativas para garantizar el correcto funcionamiento de la biblioteca.
+
+### 1.3. Situación actual y problemas detectados
+
+La gestión de una biblioteca puede resultar compleja cuando aumenta el número de libros, ejemplares, usuarios y préstamos. Si la información se almacena en documentos independientes o en sistemas no integrados, pueden aparecer problemas que dificulten el funcionamiento de la organización.
+
+Entre los principales problemas que se pretende solucionar se encuentran los siguientes:
+- Falta de centralización de la información: los datos de los libros, usuarios y préstamos pueden encontrarse distribuidos en diferentes documentos o sistemas.
+- Dificultad para conocer la disponibilidad: no siempre resulta sencillo determinar si un ejemplar está disponible, prestado o pendiente de devolución.
+- Control insuficiente de los préstamos: es necesario saber qué usuario tiene cada ejemplar y cuándo debe devolverlo.
+- Gestión de múltiples ejemplares: una misma obra puede tener varias copias físicas, por lo que es necesario identificar cada ejemplar individualmente.
+- Organización de las sucursales: cuando la biblioteca dispone de varias ubicaciones, se necesita conocer dónde está asignado cada ejemplar.
+- Duplicidad e inconsistencia de los datos: registrar repetidamente la información de una misma obra o usuario puede generar errores y dificultar su actualización.
+- Dificultad para obtener información: los gestores necesitan realizar consultas rápidas sobre los libros disponibles, los préstamos activos y el historial de los usuarios.
+
+### 1.4. Expectativas del cliente
+
+El cliente espera disponer de un sistema que facilite la administración de la biblioteca y mejore el acceso a la información.
+
+En concreto, se espera que la solución permita centralizar los datos, agilizar las consultas, controlar los préstamos y las devoluciones, reducir los errores administrativos y mantener un inventario actualizado de los ejemplares físicos.
+
+Además, el sistema deberá garantizar que la información esté correctamente relacionada, evitando situaciones como registrar préstamos de libros inexistentes o prestar simultáneamente el mismo ejemplar a varios usuarios.
+
+### 1.5. Objetivos del proyecto en cuanto a la base de datos
+
+El objetivo principal a la hora de diseñar la base de datos relacional es que permita gestionar de forma eficiente la información y las operaciones habituales de una biblioteca.
+Para alcanzar este objetivo, se establecen los siguientes objetivos específicos:
+Gestionar los datos de los clientes y gestores.
+Mantener un catálogo actualizado de libros y sus creadores.
+Registrar e identificar individualmente las copias físicas de cada libro.
+Organizar los ejemplares según la sucursal a la que pertenecen.
+Registrar los préstamos y las devoluciones de libros.
+Consultar la disponibilidad de los ejemplares y el historial de préstamos.
+Garantizar la integridad y coherencia de los datos mediante restricciones y reglas de negocio.
+Facilitar las tareas administrativas y mejorar la calidad del servicio ofrecido a los usuarios.
+
+En definitiva, el proyecto pretende proporcionar una solución que permita a la biblioteca gestionar sus recursos de manera organizada, mantener información fiable y ofrecer un servicio de préstamo más eficiente.
 
 ## 2. Glosario de términos
 
