@@ -57,6 +57,8 @@ Facilitar las tareas administrativas y mejorar la calidad del servicio ofrecido 
 
 En definitiva, el proyecto pretende proporcionar una solución que permita a la biblioteca gestionar sus recursos de manera organizada, mantener información fiable y ofrecer un servicio de préstamo más eficiente.
 
+![Diagrama](images/TrabajoIISSI.jpg)
+
 ## 2. Glosario de términos
 
 - Términos específicos del dominio del problema, ordenados alfabéticamente. Se valorará la presencia de información multimedia.
@@ -477,43 +479,26 @@ Los préstamos devueltos deben conservarse para mantener el historial de operaci
 
 ### 4.2. Mapa de historias de usuario (opcional)
 
-Mapa de historias de usuario
-
-
-Actividad	          Tarea	                      ID	    Historia de usuario	    Prioridad
-Catálogo de libros	Buscar libros	              HU-01	  Como cliente, quiero buscar libros por título para localizar las obras que me interesan.	Alta
-Catálogo de libros	Consultar disponibilidad	HU-02	Como cliente, quiero conocer qué ejemplares están disponibles y en qué sucursal.	Alta
-Catálogo de libros	Registrar libros	HU-04	Como gestor, quiero registrar libros y creadores para mantener actualizado el catálogo.	Alta
-Catálogo de libros	Registrar copias físicas	HU-05	Como gestor, quiero registrar copias físicas y asignarlas a sucursales.	Alta
-Catálogo de libros	Consultar información	HU-09	Como cliente, quiero consultar la información detallada de un libro para decidir si me interesa.	Media
-Catálogo de libros	Filtrar resultados	HU-10	Como cliente, quiero filtrar los libros por escritor, género, editorial e idioma para encontrar obras de mi interés.	Media
-Catálogo de libros	Consultar escritores	HU-11	Como cliente, quiero consultar el listado de escritores y sus obras para conocer los autores disponibles.	Media
-Catálogo de libros	Modificar información	HU-12	Como gestor, quiero actualizar los datos de los libros y sus creadores para mantener la información correcta.	Media
-Catálogo de libros	Eliminar registros	HU-13	Como gestor, quiero dar de baja libros del catálogo cuando corresponda para mantenerlo actualizado.	Baja
-Gestión de sucursales	Consultar sucursales	HU-14	Como cliente, quiero consultar las direcciones, teléfonos y horarios de las sucursales para saber dónde acudir.	Media
-Gestión de sucursales	Consultar el fondo bibliográfico	HU-15	Como gestor, quiero consultar los libros disponibles en cada sucursal para conocer su fondo bibliográfico.	Media
-Gestión de sucursales	Consultar copias físicas	HU-16	Como gestor, quiero consultar las copias físicas por libro o sucursal, incluyendo su estado y estantería, para localizar los ejemplares.	Alta
-Gestión de sucursales	Cambiar ubicación	HU-17	Como gestor, quiero cambiar la sucursal asignada a una copia física para mantener actualizada su ubicación.	Baja
-Gestión de clientes	Consultar clientes	HU-18	Como gestor, quiero consultar el listado de clientes y sus datos para gestionar los socios de la biblioteca.	Media
-Gestión de clientes	Registrar clientes	HU-19	Como gestor, quiero registrar nuevos clientes para permitirles utilizar los servicios de la biblioteca.	Alta
-Gestión de clientes	Actualizar clientes	HU-20	Como gestor, quiero modificar los datos de un cliente para mantener actualizada su información.	Media
-Gestión de clientes	Consultar sanciones	HU-21	Como gestor, quiero consultar los clientes sancionados para saber a quiénes no se les puede prestar libros.	Media
-Gestión de clientes	Gestionar sanciones	HU-22	Como gestor, quiero registrar y actualizar sanciones para controlar las restricciones aplicadas a los clientes.	Media
-Gestión de préstamos	Consultar préstamos propios	HU-03	Como cliente, quiero consultar mis préstamos activos y las fechas previstas de devolución.	Alta
-Gestión de préstamos	Registrar préstamos	HU-06	Como gestor, quiero registrar préstamos para saber qué ejemplares tiene cada cliente.	Alta
-Gestión de préstamos	Registrar devoluciones	HU-07	Como gestor, quiero registrar devoluciones para actualizar la disponibilidad de los ejemplares.	Alta
-Gestión de préstamos	Consultar historial	HU-08	Como gestor, quiero consultar el historial de préstamos para revisar las operaciones realizadas.	Media
-Gestión de préstamos	Consultar préstamos activos	HU-23	Como gestor, quiero consultar los préstamos activos para realizar el seguimiento de los ejemplares prestados.	Alta
-Gestión de préstamos	Consultar préstamos vencidos	HU-24	Como gestor, quiero consultar los préstamos vencidos para identificar las devoluciones pendientes.	Media
-Gestión de préstamos	Validar disponibilidad	HU-25	Como gestor, quiero que el sistema compruebe la disponibilidad de una copia antes de registrar un préstamo para evitar asignaciones duplicadas.	Alta
-Gestión de préstamos	Validar clientes	HU-26	Como gestor, quiero que el sistema compruebe que un cliente está dado de alta y no tiene restricciones que impidan el préstamo antes de registrar una operación.	Alta
-Gestión de préstamos	Consultar fechas límite	HU-27	Como cliente, quiero conocer la fecha límite de devolución de cada préstamo para evitar retrasos.	Media
-Gestión de proveedores	Registrar proveedores	HU-28	Como gestor, quiero registrar proveedores para mantener organizada la información de las empresas suministradoras.	Media
-Gestión de proveedores	Consultar proveedores	HU-29	Como gestor, quiero consultar los proveedores registrados para localizar sus datos de contacto.	Media
-Gestión de proveedores	Consultar compras	HU-30	Como gestor, quiero consultar los productos o libros adquiridos a cada proveedor para controlar las compras realizadas.	Baja
-Gestión de proveedores	Consultar estadísticas	HU-31	Como gestor, quiero consultar estadísticas de préstamos y devoluciones para conocer el uso de los recursos de la biblioteca.	Baja
-
-
+| Actividad | Tarea | Historia de usuario | Prioridad |
+|-----------|-------|---------------------|-----------|
+| Catálogo de libros | Buscar libros | Como cliente, quiero buscar libros por título para localizar las obras que me interesan. | Alta |
+| Catálogo de libros | Consultar disponibilidad | Como cliente, quiero conocer qué ejemplares están disponibles y en qué sucursal. | Alta |
+| Catálogo de libros | Registrar libros | Como gestor, quiero registrar libros y creadores para mantener actualizado el catálogo. | Alta |
+| Catálogo de libros | Registrar copias físicas | Como gestor, quiero registrar copias físicas y asignarlas a sucursales. | Alta |
+| Catálogo de libros | Consultar información | Como cliente, quiero consultar la información detallada de un libro para decidir si me interesa. | Media |
+| Catálogo de libros | Filtrar resultados | Como cliente, quiero filtrar los libros por escritor, género, editorial e idioma para encontrar obras de mi interés. | Media |
+| Gestión de sucursales | Consultar sucursales | Como cliente, quiero consultar las direcciones, teléfonos y horarios de las sucursales para saber dónde acudir. | Media |
+| Gestión de sucursales | Consultar copias físicas | Como gestor, quiero consultar las copias físicas por libro o sucursal, incluyendo su estado y estantería, para localizar los ejemplares. | Alta |
+| Gestión de clientes | Registrar clientes | Como gestor, quiero registrar nuevos clientes para permitirles utilizar los servicios de la biblioteca. | Alta |
+| Gestión de clientes | Gestionar sanciones | Como gestor, quiero registrar y actualizar sanciones para controlar las restricciones aplicadas a los clientes. | Media |
+| Gestión de préstamos | Consultar préstamos propios | Como cliente, quiero consultar mis préstamos activos y las fechas previstas de devolución. | Alta |
+| Gestión de préstamos | Registrar préstamos | Como gestor, quiero registrar préstamos para saber qué ejemplares tiene cada cliente. | Alta |
+| Gestión de préstamos | Registrar devoluciones | Como gestor, quiero registrar devoluciones para actualizar la disponibilidad de los ejemplares. | Alta |
+| Gestión de préstamos | Consultar historial | Como gestor, quiero consultar el historial de préstamos para revisar las operaciones realizadas. | Media |
+| Gestión de préstamos | Consultar préstamos activos | Como gestor, quiero consultar los préstamos activos para realizar el seguimiento de los ejemplares prestados. | Alta |
+| Gestión de préstamos | Consultar préstamos vencidos | Como gestor, quiero consultar los préstamos vencidos para identificar las devoluciones pendientes. | Media |
+| Gestión de préstamos | Validar disponibilidad | Como gestor, quiero que el sistema compruebe la disponibilidad de una copia antes de registrar un préstamo para evitar asignaciones duplicadas. | Alta |
+| Gestión de préstamos | Validar clientes | Como gestor, quiero que el sistema compruebe que un cliente está dado de alta y no tiene restricciones que impidan el préstamo antes de registrar una operación. | Alta |
 
 ### 4.3. Requisitos no funcionales (opcional)
 
