@@ -3,9 +3,7 @@
 ## Miembros del grupo L6-DF-5
 
 1. Guerrero Fuentes, Alexandro
-1. Leon Galdino, Marianna Andrea
-1. Apellidos, Nombre
-1. Apellidos, Nombre
+2. Leon Galdino, Marianna Andrea
 
 ## 1. Introducción al problema
 
@@ -51,9 +49,11 @@
 
 El sistema deberá cumplir los siguientes requisitos generales:
   - Almacenamiento centralizado: toda la información relevante de la biblioteca deberá almacenarse de forma organizada en una base de datos.
-  - Gestión de usuarios: el sistema permitirá distinguir entre clientes y gestores y controlar las operaciones que puede realizar cada tipo de usuario.
+  - Gestión de usuarios: el sistema permitirá distinguir entre clientes y gestores y controlar las operaciones que puede realizar cada tipo de
+                          usuario.
   - Gestión del catálogo: se podrán registrar y consultar libros y sus creadores.
-  - Gestión de ejemplares: cada copia física estará identificada individualmente y asociada a un libro, una sucursal, y constara si esta alquilada y su estado de conservación.
+  - Gestión de ejemplares: cada copia física estará identificada individualmente y asociada a un libro, una sucursal, y constara si esta alquilada
+                            y su estado de conservación.
   - Gestión de sucursales: se almacenará la información de las diferentes sucursales de la biblioteca.
   - Gestión de Alquileres: el sistema permitirá registrar préstamos, controlar las fechas previstas de devolución y registrar las devoluciones.
   - Consulta de disponibilidad: se podrá conocer qué ejemplares están disponibles para nuevos préstamos.
@@ -72,12 +72,12 @@ La especialización es incompleta y disjunta. Es incompleta porque, en el modelo
 
 Representa a una persona registrada en el sistema y almacena los datos comunes a todos los usuarios:
 
- + Nombre.
- + Apellidos.
- + Email.
- + Teléfono.
- + Dirección.
- + Fecha de registro.
+ 1. Nombre.
+ 2. Apellidos.
+ 3. Email.
+ 4. Teléfono.
+ 5. Dirección.
+ 6. Fecha de registro.
 
 Esta entidad permite centralizar los datos comunes y evitar su duplicación en las especializaciones.
 
@@ -87,9 +87,9 @@ Es una especialización de Usuario que representa a las personas que utilizan lo
 
 Sus atributos específicos son:
 
- + Número de socio (identifica de forma única a cada cliente).
- + Fecha de alta.
- + Sanción (opcional, permitiendo indicar si el cliente tiene alguna sanción registrada).
+ 1. Número de socio (identifica de forma única a cada cliente).
+ 2. Fecha de alta.
+ 3. Sanción (opcional, permitiendo indicar si el cliente tiene alguna sanción registrada).
 
 Los clientes pueden consultar el catálogo de libros, conocer la disponibilidad de los ejemplares y realizar alquileres de copias físicas, cumpliendo las condiciones establecidas por la biblioteca.
 
@@ -99,7 +99,7 @@ Es una especialización de Usuario que representa al personal encargado de admin
 
 Su atributo específico es:
 
-+ Número de empleado, que identifica de forma única a cada gestor.
+1. Número de empleado, que identifica de forma única a cada gestor.
 
 Los gestores son responsables de mantener actualizado el catálogo, registrar y administrar las copias físicas, gestionar los alquileres y las devoluciones, y realizar consultas y listados necesarios para el funcionamiento de la biblioteca. De igual forma, cada gestor estará asociado a la sucursal cuya gestión tenga asignada.
 
@@ -196,136 +196,96 @@ para mantener sus datos personales y de contacto.
 - Comprobar que cada usuario tiene un identificador único.
 
 R.I.02. Información de clientes (socios)
-Como gestor del sistema, quiero registrar y consultar la información de los clientes para gestionar su condición de socio y sus préstamos.
-
-Prueba de aceptación
-
-Comprobar que cada cliente tiene un número de socio único.
-
-Comprobar que se almacena la fecha de alta del cliente.
-
-Comprobar que se puede registrar si el cliente está sancionado.
-
-Comprobar que el estado de sanción es opcional.
-
-Comprobar que cada cliente dispone de los datos comunes de usuario.
-
-Comprobar que se puede identificar si un cliente está dado de alta.
-
-R.I.03. Información de gestores
-Como administrador del sistema, quiero registrar y consultar la información de los gestores para identificarlos y gestionar sus permisos administrativos.
-
-Prueba de aceptación
-
-Comprobar que cada gestor tiene un número de empleado.
-
-Comprobar que se almacenan los datos comunes de usuario.
-
-Comprobar que se puede identificar a cada gestor de forma única.
-
-R.I.04. Información de sucursales
-Como gestor del sistema, quiero registrar y consultar la información de las sucursales para conocer sus datos de contacto y horarios de atención.
-
-Prueba de aceptación
-
-Comprobar que se puede almacenar el nombre de la sucursal.
-
-Comprobar que se puede registrar su dirección.
-
-Comprobar que se puede registrar su teléfono.
-
-Comprobar que se puede almacenar el horario de atención.
-
-Comprobar que cada sucursal puede identificarse de forma inequívoca.
-
-R.I.05. Información de libros
-Como usuario del sistema, quiero consultar la información de los libros para identificar sus características y conocer en qué sucursales se encuentran.
-
-Prueba de aceptación
-
-Comprobar que se almacena el ISBN del libro.
-
-Comprobar que se registra el título.
-
-Comprobar que se puede almacenar el año de publicación.
-
-Comprobar que se registra el género literario.
-
-Comprobar que se almacena la editorial.
-
-Comprobar que se registra el idioma.
-
-Comprobar que se pueden asociar uno o varios escritores a un libro.
-
-Comprobar que se puede conocer la sucursal o las sucursales donde reside el libro.
-
-R.I.06. Información de escritores
-Como usuario del sistema, quiero consultar la información de los escritores para conocer sus datos personales y su trayectoria.
-
-Prueba de aceptación
-
-Comprobar que se almacena el nombre y los apellidos del escritor.
-
-Comprobar que se puede registrar su biografía.
-
-Comprobar que se puede almacenar su fecha de nacimiento.
-
-Comprobar que un escritor puede estar relacionado con varios libros.
-
-R.I.07. Información de copias físicas
-Como gestor del sistema, quiero registrar y consultar la información de las copias físicas para controlar su estado, ubicación y disponibilidad.
-
-Prueba de aceptación
-
-Comprobar que cada copia física tiene un código de barras único.
-
-Comprobar que se registra el estado físico de la copia, que puede ser bien o mal.
-
-Comprobar que se registra la disponibilidad de la copia, que puede ser disponible o no disponible.
-
-Comprobar que se puede almacenar la estantería donde se ubica.
-
-Comprobar que cada copia física está asignada a una sucursal.
-
-Comprobar que cada copia física corresponde a un único libro.
-
-Comprobar que un libro puede tener varias copias físicas.
-
-R.I.08. Información de préstamos
-Como gestor del sistema, quiero registrar y consultar la información de los préstamos para controlar los alquileres de copias físicas y conservar su historial.
-
-Prueba de aceptación
-
-Comprobar que se almacena la fecha de inicio del préstamo.
-
-Comprobar que se registra la fecha límite de devolución.
-
-Comprobar que la fecha límite de devolución no es anterior a la fecha de inicio del préstamo.
-
-Comprobar que la fecha de devolución efectiva se registra cuando se devuelve la copia.
-
-Comprobar que se identifica al cliente que realiza el préstamo.
-
-Comprobar que se identifica la copia física prestada.
-
-Comprobar que solo los clientes dados de alta pueden realizar préstamos.
-
-Comprobar que una misma copia física no puede tener más de un préstamo activo simultáneamente.
-
-Comprobar que una copia física prestada no aparece como disponible para un nuevo préstamo.
-
-Comprobar que los préstamos devueltos se conservan para mantener el historial de operaciones.
-
-##### R.I.01. Título requisito de información
-
-Como [tipo de usuario]
-quiero [servicio]
-para [razón]
+Como gestor del sistema, 
+quiero registrar y consultar la información de los clientes
+para gestionar su condición de socio y sus préstamos.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- ...
+- Comprobar que cada cliente tiene un número de socio único.
+- Comprobar que se almacena la fecha de alta del cliente.
+- Comprobar que se puede registrar si el cliente está sancionado.
+- Comprobar que el estado de sanción es opcional.
+- Comprobar que cada cliente dispone de los datos comunes de usuario.
+- Comprobar que se puede identificar si un cliente está dado de alta.
+
+R.I.03. Información de gestores
+Como administrador del sistema, 
+quiero registrar y consultar la información de los gestores 
+para identificarlos y gestionar sus permisos administrativos.
+
+**Prueba de aceptación**
+- Comprobar que cada gestor tiene un número de empleado.
+- Comprobar que se almacenan los datos comunes de usuario.
+- Comprobar que se puede identificar a cada gestor de forma única.
+
+R.I.04. Información de sucursales
+Como gestor del sistema, 
+quiero registrar y consultar la información de las sucursales 
+para conocer sus datos de contacto y horarios de atención.
+
+**Prueba de aceptación**
+- Comprobar que se puede almacenar el nombre de la sucursal.
+- Comprobar que se puede registrar su dirección.
+- Comprobar que se puede registrar su teléfono.
+- Comprobar que se puede almacenar el horario de atención.
+- Comprobar que cada sucursal puede identificarse de forma inequívoca.
+
+R.I.05. Información de libros
+Como usuario del sistema, 
+quiero consultar la información de los libros 
+para identificar sus características y conocer en qué sucursales se encuentran.
+
+**Prueba de aceptación**
+- Comprobar que se almacena el ISBN del libro.
+- Comprobar que se registra el título.
+- Comprobar que se puede almacenar el año de publicación.
+- Comprobar que se registra el género literario.
+- Comprobar que se almacena la editorial.
+- Comprobar que se registra el idioma.
+- Comprobar que se pueden asociar uno o varios escritores a un libro.
+- Comprobar que se puede conocer la sucursal o las sucursales donde reside el libro.
+
+R.I.06. Información de escritores
+Como usuario del sistema, 
+quiero consultar la información de los escritores 
+para conocer sus datos personales y su trayectoria.
+
+**Prueba de aceptación**
+- Comprobar que se almacena el nombre y los apellidos del escritor.
+- Comprobar que se puede registrar su biografía.
+- Comprobar que se puede almacenar su fecha de nacimiento.
+- Comprobar que un escritor puede estar relacionado con varios libros.
+
+R.I.07. Información de copias físicas
+Como gestor del sistema, 
+quiero registrar y consultar la información de las copias físicas 
+para controlar su estado, ubicación y disponibilidad.
+
+**Prueba de aceptación**
+- Comprobar que cada copia física tiene un código de barras único.
+- Comprobar que se registra el estado físico de la copia, que puede ser bien o mal.
+- Comprobar que se registra la disponibilidad de la copia, que puede ser disponible o no disponible.
+- Comprobar que se puede almacenar la estantería donde se ubica.
+- Comprobar que cada copia física está asignada a una sucursal.
+- Comprobar que cada copia física corresponde a un único libro.
+- Comprobar que un libro puede tener varias copias físicas.
+
+R.I.08. Información de préstamos
+Como gestor del sistema, 
+quiero registrar y consultar la información de los préstamos 
+para controlar los alquileres de copias físicas y conservar su historial.
+
+**Prueba de aceptación**
+- Comprobar que se almacena la fecha de inicio del préstamo.
+- Comprobar que se registra la fecha límite de devolución.
+- Comprobar que la fecha límite de devolución no es anterior a la fecha de inicio del préstamo.
+- Comprobar que la fecha de devolución efectiva se registra cuando se devuelve la copia.
+- Comprobar que se identifica al cliente que realiza el préstamo.
+- Comprobar que se identifica la copia física prestada.
+- Comprobar que solo los clientes dados de alta pueden realizar préstamos.
+- Comprobar que una misma copia física no puede tener más de un préstamo activo simultáneamente.
+- Comprobar que una copia física prestada no aparece como disponible para un nuevo préstamo.
+- Comprobar que los préstamos devueltos se conservan para mantener el historial de operaciones.
 
 #### 4.1.2. Reglas de negocio
 
