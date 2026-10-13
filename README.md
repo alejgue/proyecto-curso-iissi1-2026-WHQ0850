@@ -7,8 +7,6 @@
 
 ## 1. Introducción al problema
 
-- Descripción del problema para poner en contexto el proyecto, incluyendo información sobre los clientes y usuarios, la situación actual, problemas, expectativas, etc. Se valorará la presencia de información multimedia (fotos, gráficos, documentos escaneados, etc.).
-
 ### 1.1. Descripción del problema
 El cliente solicita el desarrollo de un sistema de información para la gestión de una biblioteca que dispone de un catálogo de libros y de diferentes sucursales donde se almacenan y prestan ejemplares físicos a los usuarios.
 El objetivo principal del proyecto es desarrollar una base de datos que permita almacenar, organizar y consultar toda la información relacionada con el funcionamiento de la biblioteca, facilitando la gestión de los libros, sus ejemplares físicos, los usuarios, los creadores de las obras, las sucursales y los préstamos realizados.
@@ -18,7 +16,7 @@ Para satisfacer estas necesidades, se propone diseñar e implementar una base de
 ### 1.2. Clientes y usuarios
 El sistema estará destinado a dos tipos principales de usuarios:
 
-- Clientes: personas que utilizan los servicios de la biblioteca para consultar el catálogo y solicitar préstamos de libros. Necesitan conocer qué obras están disponibles y consultar la información de sus préstamos.
+- **Clientes**: personas que utilizan los servicios de la biblioteca para consultar el catálogo y solicitar préstamos de libros. Necesitan conocer qué obras están disponibles y consultar la información de sus préstamos.
 - Gestores: trabajadores responsables de administrar la biblioteca. Se encargarán de mantener actualizado el catálogo, registrar ejemplares, gestionar las sucursales, administrar los usuarios y registrar los préstamos y las devoluciones.
   
 Cada tipo de usuario tendrá unas responsabilidades diferentes. Mientras que los clientes estarán orientados a la consulta de información y al uso del servicio de préstamo, los gestores dispondrán de funcionalidades administrativas para garantizar el correcto funcionamiento de la biblioteca.
