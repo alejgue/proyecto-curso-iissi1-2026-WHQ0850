@@ -28,11 +28,11 @@ La gestión de una biblioteca puede resultar compleja cuando aumenta el número 
 Entre los principales problemas que se pretende solucionar se encuentran los siguientes:
 - **Falta de centralización de la información**: los datos de los libros, usuarios y préstamos pueden encontrarse distribuidos en diferentes documentos o sistemas.
 - **Dificultad para conocer la disponibilidad**: no siempre resulta sencillo determinar si un ejemplar está disponible, prestado o pendiente de devolución.
-- Control insuficiente de los préstamos: es necesario saber qué usuario tiene cada ejemplar y cuándo debe devolverlo.
-- Gestión de múltiples ejemplares: una misma obra puede tener varias copias físicas, por lo que es necesario identificar cada ejemplar individualmente.
-- Organización de las sucursales: cuando la biblioteca dispone de varias ubicaciones, se necesita conocer dónde está asignado cada ejemplar.
-- Duplicidad e inconsistencia de los datos: registrar repetidamente la información de una misma obra o usuario puede generar errores y dificultar su actualización.
-- Dificultad para obtener información: los gestores necesitan realizar consultas rápidas sobre los libros disponibles, los préstamos activos y el historial de los usuarios.
+- **Control insuficiente de los préstamos**: es necesario saber qué usuario tiene cada ejemplar y cuándo debe devolverlo.
+- **Gestión de múltiples ejemplares**: una misma obra puede tener varias copias físicas, por lo que es necesario identificar cada ejemplar individualmente.
+- **Organización de las sucursales**: cuando la biblioteca dispone de varias ubicaciones, se necesita conocer dónde está asignado cada ejemplar.
+- **Duplicidad e inconsistencia de los datos**: registrar repetidamente la información de una misma obra o usuario puede generar errores y dificultar su actualización.
+- **Dificultad para obtener información**: los gestores necesitan realizar consultas rápidas sobre los libros disponibles, los préstamos activos y el historial de los usuarios.
 
 ### 1.4. Expectativas del cliente
 
@@ -60,8 +60,6 @@ En definitiva, el proyecto pretende proporcionar una solución que permita a la 
 ![Diagrama](images/TrabajoIISSI.jpg)
 
 ## 2. Glosario de términos
-
-- Términos específicos del dominio del problema, ordenados alfabéticamente. Se valorará la presencia de información multimedia.
 
 - Alquiler(préstamo): Operación por la que un cliente retira una copia física de un libro durante un periodo, quedando registrada la fecha de alquiler y la fecha límite de devolución.
   
