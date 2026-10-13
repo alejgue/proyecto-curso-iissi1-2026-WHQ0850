@@ -389,41 +389,90 @@ para controlar los alquileres de copias físicas y conservar su historial.
 
 Cada usuario debe tener un identificador único.
 
+**Prueba de aceptación**
+- Comprobar que el sistema permite registrar un usuario con un identificador que no existe previamente.
+- Comprobar que el sistema impide registrar dos usuarios con el mismo identificador.
+
 ##### R.N.02. Correspondencia entre libros y copias físicas
 
 Cada copia física debe corresponder a un único libro, aunque un libro pueda tener varias copias.
+
+**Prueba de aceptación**
+- Comprobar que el sistema permite asociar varias copias físicas a un mismo libro.
+- Comprobar que el sistema impide asociar una misma copia física a más de un libro simultáneamente.
 
 ##### R.N.03. Asignación de copias a sucursales
 
 Cada copia física debe estar asignada a una sucursal.
 
+**Prueba de aceptación**
+- Comprobar que el sistema permite registrar una copia física asignada a una sucursal existente.
+- Comprobar que el sistema impide registrar una copia física sin una sucursal asignada.
+
 ##### R.N.04. Validación del estado de alta del cliente
 
 Un préstamo solo puede realizarse a un cliente que este dado de alta.
+
+**Prueba de aceptación**
+- Comprobar que el sistema permite realizar un préstamo a un cliente que está dado de alta.
+- Comprobar que el sistema impide realizar un préstamo a un cliente que no está dado de alta.
 
 ##### R.N.05. Exclusividad de préstamos activos por copia
 
 Una misma copia física no puede tener más de un préstamo activo simultáneamente.
 
+**Prueba de aceptación**
+- Comprobar que el sistema permite realizar un préstamo de una copia física que no tiene ningún préstamo activo.
+- Comprobar que el sistema impide realizar un nuevo préstamo de una copia física que ya tiene un préstamo activo.
+- Comprobar que el sistema permite volver a prestar la copia física una vez que se ha registrado la devolución del préstamo anterior.
+
 ##### R.N.06. Validación de fechas de préstamo y devolución
 
 La fecha prevista de devolución no puede ser anterior a la fecha del préstamo.
+
+**Prueba de aceptación**
+- Comprobar que el sistema permite registrar un préstamo cuya fecha prevista de devolución es posterior a la fecha del préstamo.
+- Comprobar que el sistema permite registrar un préstamo cuya fecha prevista de devolución coincide con la fecha del préstamo, si no existe otra restricción.
+- Comprobar que el sistema impide registrar un préstamo cuya fecha prevista de devolución sea anterior a la fecha del préstamo..
 
 ##### R.N.07. Control de disponibilidad de copias
 
 Una copia prestada no puede considerarse disponible para un nuevo préstamo.
 
+**Prueba de aceptación**
+- Comprobar que el sistema muestra como disponibles las copias físicas que no tienen ningún préstamo activo.
+- Comprobar que el sistema muestra como no disponibles las copias físicas que tienen un préstamo activo.
+- Comprobar que el sistema impide seleccionar una copia prestada para realizar un nuevo préstamo.
+- Comprobar que el sistema actualiza la disponibilidad de una copia física después de registrar su devolución.
+
 ##### R.N.08. Correspondencia entre libros y Creadores
 
 Un libro puede tener varios creadores y un creador puede estar relacionado con varios libros.
+
+**Prueba de aceptación**
+- Comprobar que el sistema permite asociar varios creadores a un mismo libro.
+- Comprobar que el sistema permite asociar un mismo creador a varios libros.
+- Comprobar que el sistema muestra correctamente los creadores asociados a cada libro.
+- Comprobar que el sistema muestra correctamente los libros asociados a cada creador.
 
 ##### R.N.09. Control de permisos según el usuario
 
 Solo los gestores pueden realizar las operaciones administrativas reservadas a ese perfil.
 
+**Prueba de aceptación**
+- Comprobar que un gestor puede realizar las operaciones administrativas reservadas a su perfil.
+- Comprobar que un usuario sin perfil de gestor no puede realizar las operaciones administrativas restringidas.
+- Comprobar que el sistema impide el acceso no autorizado a dichas operaciones, incluso si se intenta acceder directamente a ellas sin utilizar la interfaz habitual.
+
 ##### R.N.10. Conservación del historial de prestamos
 
 Los préstamos devueltos deben conservarse para mantener el historial de operaciones.
+
+**Prueba de aceptación**
+- Comprobar que el sistema conserva el registro de un préstamo después de registrar su devolución.
+- Comprobar que el préstamo devuelto aparece en el historial del cliente.
+- Comprobar que el sistema conserva los datos del préstamo, incluidas las fechas correspondientes.
+- Comprobar que el préstamo devuelto deja de figurar como activo sin eliminarse del historial de operaciones.
 
 
 ### 4.2. Mapa de historias de usuario (opcional)
@@ -565,5 +614,12 @@ Se consideran todo tipo de constraints declarativas (aquellas definidas durante 
 -- fin entregable 3 --
 
 ## Referencias
+
+Gemini/ChatGPT - Consultas varias sobre Biblioteca (funcionamiento,problemas,etc) [https://gemini.google.com/app?hl=es] [https://chatgpt.com/]
+
+Lucid - Como crear mapa historia de usuario [https://lucid.co/es/blog/como-crear-un-mapa-de-historias-de-usuario]
+
+Github.docs - Escritura y formato en Markdown[https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax]
+
 
 
