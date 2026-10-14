@@ -114,8 +114,6 @@ El sistema deberá cumplir los siguientes requisitos generales:
 
 El sistema contiene una entidad general denominada "Usuario", que representa a las personas registradas en la biblioteca. Esta entidad se especializa en dos tipos de usuarios: Cliente y Gestor.
 
-La especialización es incompleta y disjunta. Es incompleta porque, en el modelo conceptual, podría haber usuarios que no pertenezcan a ninguna de las dos especializaciones, aunque la regla de negocio establece que todos los usuarios registrados deben ser clientes o gestores. Es disjunta porque un mismo usuario no puede ser simultáneamente cliente y gestor.
-
 - Usuario (generalización)
 
 Representa a una persona registrada en el sistema y almacena los datos comunes a todos los usuarios:
