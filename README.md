@@ -13,15 +13,7 @@ El objetivo principal del proyecto es desarrollar una base de datos que permita 
 La biblioteca necesita disponer de un sistema centralizado que permita conocer en todo momento qué libros forman parte de su catálogo, cuántos ejemplares existen de cada obra, en qué sucursal se encuentra cada ejemplar y cuáles están disponibles para ser prestados. Asimismo, es necesario mantener un registro de los préstamos y las devoluciones para poder consultar qué usuarios tienen libros prestados y cuándo deben devolverlos.
 Para satisfacer estas necesidades, se propone diseñar e implementar una base de datos relacional que permita gestionar la información de forma estructurada, segura y consistente.
 
-### 1.2. Clientes y usuarios
-El sistema estará destinado a dos tipos principales de usuarios:
-
-- **Clientes**: personas que utilizan los servicios de la biblioteca para consultar el catálogo y solicitar préstamos de libros. Necesitan conocer qué obras están disponibles y consultar la información de sus préstamos.
-- **Gestores**: trabajadores responsables de administrar la biblioteca. Se encargarán de mantener actualizado el catálogo, registrar ejemplares, gestionar las sucursales, administrar los usuarios y registrar los préstamos y las devoluciones.
-  
-Cada tipo de usuario tendrá unas responsabilidades diferentes. Mientras que los clientes estarán orientados a la consulta de información y al uso del servicio de préstamo, los gestores dispondrán de funcionalidades administrativas para garantizar el correcto funcionamiento de la biblioteca.
-
-### 1.3. Situación actual y problemas detectados
+### 1.2. Situación actual y problemas detectados
 
 La gestión de una biblioteca puede resultar compleja cuando aumenta el número de libros, ejemplares, usuarios y préstamos. Si la información se almacena en documentos independientes o en sistemas no integrados, pueden aparecer problemas que dificulten el funcionamiento de la organización.
 
@@ -34,7 +26,7 @@ Entre los principales problemas que se pretende solucionar se encuentran los sig
 - **Duplicidad e inconsistencia de los datos**: registrar repetidamente la información de una misma obra o usuario puede generar errores y dificultar su actualización.
 - **Dificultad para obtener información**: los gestores necesitan realizar consultas rápidas sobre los libros disponibles, los préstamos activos y el historial de los usuarios.
 
-### 1.4. Expectativas del cliente
+### 1.3. Expectativas del cliente
 
 El cliente espera disponer de un sistema que facilite la administración de la biblioteca y mejore el acceso a la información.
 
@@ -42,61 +34,19 @@ En concreto, se espera que la solución permita centralizar los datos, agilizar 
 
 Además, el sistema deberá garantizar que la información esté correctamente relacionada, evitando situaciones como registrar préstamos de libros inexistentes o prestar simultáneamente el mismo ejemplar a varios usuarios.
 
-### 1.5. Objetivos del proyecto en cuanto a la base de datos
-
-El objetivo principal a la hora de diseñar la base de datos relacional es que permita gestionar de forma eficiente la información y las operaciones habituales de una biblioteca.
-Para alcanzar este objetivo, se establecen los siguientes objetivos específicos:
-Gestionar los datos de los clientes y gestores.
-Mantener un catálogo actualizado de libros y sus creadores.
-Registrar e identificar individualmente las copias físicas de cada libro.
-Organizar los ejemplares según la sucursal a la que pertenecen.
-Registrar los préstamos y las devoluciones de libros.
-Consultar la disponibilidad de los ejemplares y el historial de préstamos.
-Garantizar la integridad y coherencia de los datos mediante restricciones y reglas de negocio.
-Facilitar las tareas administrativas y mejorar la calidad del servicio ofrecido a los usuarios.
-
 En definitiva, el proyecto pretende proporcionar una solución que permita a la biblioteca gestionar sus recursos de manera organizada, mantener información fiable y ofrecer un servicio de préstamo más eficiente.
 
 ![Diagrama](images/TrabajoIISSI.jpg)
 
 ## 2. Glosario de términos
 
-- Alquiler(préstamo): Operación por la que un cliente retira una copia física de un libro durante un periodo, quedando registrada la fecha de alquiler y la fecha límite de devolución.
-  
-- Cliente (socio): Usuario de la biblioteca identificado por un número de socio, con fecha de alta, que puede alquilar copias físicas y puede estar sancionado. Alquila copias físicas de libros y consulta el catálogo.
-  
-- Copia Física(ejemplar): Cada ejemplar material de un libro, identificado por su código de barras, con un estado, una disponibilidad y ubicado en una
-  estantería.
-  
-- Disponibilidad: Situación de una copia física respecto a si puede ser alquilada en un momento dado.
-  
-- Escritor(autor): Persona que ha escrito uno o varios libros.
-  
-- Estantería: Ubicación física (número de estante) donde se guarda una copia física dentro de una sucursal.
-  
-- Estado de alquiler: Situación en la que se encuentra un alquiler: activo, devuelto o vencido. No se almacena: se calcula a partir de las fechas del alquiler.
-  
-- Estado de copia: Condición material de una copia física: Bien o Mal.
-  
-- Gestor (bibliotecario/empleado): Usuario trabajador de la biblioteca, identificado por su número de empleado, que gestiona una sucursal.
-  
 - ISBN: Código normalizado internacional que identifica de forma única un libro.
-  
-- Libro (título/obra): Obra publicada identificada por su ISBN, con título, año de publicación, género, editorial e idioma.
-  
-- Sanción/sancionado: Penalización aplicada a un cliente que le impide (temporalmente) realizar alquileres.
-  
-- Sucursal (sede): Cada una de las sedes físicas de la biblioteca, con nombre, dirección, teléfono y horario de atención.
-  
-- Usuario: Persona registrada en el sistema de la biblioteca con datos de contacto comunes. Se especializa en Cliente o Gestor.
-
 
 ## 3. Visión general del sistema
 
 ### 3.1. Requisitos generales
 
 El sistema deberá cumplir los siguientes requisitos generales:
-  - Almacenamiento centralizado: toda la información relevante de la biblioteca deberá almacenarse de forma organizada en una base de datos.
   - Gestión de usuarios: el sistema permitirá distinguir entre clientes y gestores y controlar las operaciones que puede realizar cada tipo de
     usuario.
   - Gestión del catálogo: se podrán registrar y consultar libros y sus creadores.
@@ -104,50 +54,11 @@ El sistema deberá cumplir los siguientes requisitos generales:
     y su estado de conservación.
   - Gestión de sucursales: se almacenará la información de las diferentes sucursales de la biblioteca.
   - Gestión de Alquileres: el sistema permitirá registrar préstamos, controlar las fechas previstas de devolución y registrar las devoluciones.
-  - Consulta de disponibilidad: se podrá conocer qué ejemplares están disponibles para nuevos préstamos.
-  - Integridad de la información: la base de datos deberá impedir registros incoherentes y referencias a elementos inexistentes.
-  - Seguridad: las operaciones administrativas estarán restringidas a los usuarios autorizados.
-  - Consulta del historial: los préstamos anteriores se conservarán para poder consultar las operaciones realizadas.
-
     
 ### 3.2. Usuarios del sistema 
 
-El sistema contiene una entidad general denominada "Usuario", que representa a las personas registradas en la biblioteca. Esta entidad se especializa en dos tipos de usuarios: Cliente y Gestor.
-
-- Usuario (generalización)
-
-Representa a una persona registrada en el sistema y almacena los datos comunes a todos los usuarios:
-
- 1. Nombre.
- 2. Apellidos.
- 3. Email.
- 4. Teléfono.
- 5. Dirección.
- 6. Fecha de registro.
-
-Esta entidad permite centralizar los datos comunes y evitar su duplicación en las especializaciones.
-
-- Cliente (socio)
-
-Es una especialización de Usuario que representa a las personas que utilizan los servicios de préstamo de la biblioteca.
-
-Sus atributos específicos son:
-
- 1. Número de socio (identifica de forma única a cada cliente).
- 2. Fecha de alta.
- 3. Sanción (opcional, permitiendo indicar si el cliente tiene alguna sanción registrada).
-
-Los clientes pueden consultar el catálogo de libros, conocer la disponibilidad de los ejemplares y realizar alquileres de copias físicas, cumpliendo las condiciones establecidas por la biblioteca.
-
-- Gestor (empleado)
-
-Es una especialización de Usuario que representa al personal encargado de administrar el sistema de la biblioteca.
-
-Su atributo específico es:
-
-1. Número de empleado, que identifica de forma única a cada gestor.
-
-Los gestores son responsables de mantener actualizado el catálogo, registrar y administrar las copias físicas, gestionar los alquileres y las devoluciones, y realizar consultas y listados necesarios para el funcionamiento de la biblioteca. De igual forma, cada gestor estará asociado a la sucursal cuya gestión tenga asignada.
+**Clientes**: personas que utilizan los servicios de la biblioteca. 
+**Gestores**: trabajadores responsables de administrar la biblioteca.
 
 
 ## 4. Catálogo de requisitos
@@ -498,41 +409,40 @@ Los préstamos devueltos deben conservarse para mantener el historial de operaci
 
 ### 4.3. Requisitos no funcionales (opcional)
 
-**R.N.F. 01. Tiempo de respuesta**
-Como responsable de la biblioteca, 
-quiero que el sistema responda en menos de 2 segundos con hasta 100 usuarios concurrentes, 
-para ofrecer una buena experiencia al cliente.
-
-**R.N.F. 02. Control de acceso**
+**R.N.F. 01. Control de acceso**
 Como director de la biblioteca, 
 quiero que sólo los gestores puedan acceder a las funciones de gestión y que los clientes únicamente consulten el catálogo y sus propios datos, 
 para proteger la información.
 
-**R.N.F. 03. Usabilidad**
+**R.N.F. 02. Usabilidad**
 Como cliente, 
 quiero una interfaz sencilla e intuitiva 
 para consultar el catálogo.
 
-**R.N.F. 04. Disponibilidad**
+**R.N.F. 03. Disponibilidad**
 Como Gestor, 
 quiero que el sistema esté disponible durante todo el horario de apertura de las sucursales
 para poder atender de la mejor forma posible al cliente.
 
-**R.N.F. 05. Seguridad de los datos**
+**R.N.F. 04. Seguridad de los datos**
 Como director de la biblioteca, 
 quiero que los datos personales de los clientes y la información de sus préstamos se almacenen de forma segura, 
 para evitar accesos no autorizados y proteger su privacidad.
 
-**R.N.F. 06. Integridad de los datos**
-Como gestor, 
-quiero que el sistema garantice la coherencia de la información almacenada, 
-para evitar duplicidades de usuarios, copias físicas sin libro asociado o préstamos inconsistentes.
-
-**R.N.F. 07. Compatibilidad**
+**R.N.F. 05. Compatibilidad**
 Como cliente, 
 quiero poder acceder al sistema desde los navegadores web más utilizados y desde diferentes dispositivos, 
 para consultar el catálogo independientemente del equipo que utilice.
 
+**R.N.F. 06. Seguridad**
+Como Gestor, 
+quiero las operaciones administrativas restringidas a los usuarios autorizados, 
+para consultar el catálogo independientemente del equipo que utilice.
+
+**R.N.F. 07. Consulta del historial**
+Como Gestor, 
+quiero que los préstamos anteriores se conserven 
+para poder consultar las operaciones realizadas.
 
 -- fin entregable 1 --
 
