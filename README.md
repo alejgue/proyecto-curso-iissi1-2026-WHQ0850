@@ -63,9 +63,9 @@ El sistema deberá cumplir los siguientes requisitos generales:
 
 ## 4. Catálogo de requisitos
 
-### 4.1. Requisitos funcionales
+### 4.1. Requisitos funcionales (PRUEBAS ACEPTACION Quedan solo aqui)
 
-#### R.F.01. Listado del catálogo de libros
+#### R.F.01. Listado del catálogo de libros 
 
 Como cliente, 
 quiero obtener un listado de los libros pudiendo filtrar por título, escritor, género, editorial o idioma, 
