@@ -460,15 +460,44 @@ para poder consultar las operaciones realizadas.
 
 - Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
-|       | EntidadX   | AsociaciónX  | RestricciónX  | Entidad2 ...   | 
+|       | Entidad <Usuario>   | Asociación gestiona | RestricciónX (impuesta por esa regla) | Entidad2 Sucursal   |  sdfdsfds | sdfdsfdsf | asadsad | asdasdsa
 |:------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  | X          | X          | X          | X          |
-| RI-2  |            | X          |            | X          |
-| RF-1  |            | X          |            | X          |
-| RF-2  | X          |            | X          | X          |
-| RN-1  |            | X          |            |            |
-| RN-2  | X          | X          | X          |            |
-| ...   |            |            |            |            |
+| RI-1  |           |           |           |           |
+| RI-2  |            |           |            |           |
+| RI-3  |            |           |            |           |
+| RI-4  |            |           |            |           |
+| RI-5  |            |           |            |           |
+| RI-6  |            |          |            |           |
+| RI-7  |            |           |            |           |
+| RI-8  |            |           |            |           |
+| RF-1  |            |           |            |           |
+| RF-2  |           |            |           |          |
+| RF-3  |           |            |           |           |
+| RF-4  |           |            |           |           |
+| RF-5  |           |            |           |           |
+| RF-6  |           |            |           |           |
+| RF-7  |           |            |           |           |
+| RF-8  |           |            |           |           |
+| RF-9  |           |            |           |           |
+| RF-10 |           |            |           |           |
+| RF-11 |           |            |          |           |
+| RN-1  |            |           |            |            |
+| RN-2  |           |           |           |            |
+| RN-3  |           |           |           |            |
+| RN-4  |           |           |           |            |
+| RN-5  |           |           |           |            |
+| RN-6  |           |           |           |            |
+| RN-7  |           |           |           |            |
+| RN-8  |           |           |           |            |
+| RN-9  |           |          |           |            |
+| RN-10 |           |           |           |            |
+| RNF-1 |           |           |           |            |
+| RNF-2 |           |           |           |            |
+| RNF-3 |           |          |           |            |
+| RNF-4 |           |           |           |            |
+| RNF-5 |           |           |           |            |
+| RNF-6 |           |           |           |            |
+| RNF-7 |           |           |           |            |
 
 -- fin entregable 2 --
 
