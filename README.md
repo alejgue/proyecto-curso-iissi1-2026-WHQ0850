@@ -36,7 +36,7 @@ Además, el sistema deberá garantizar que la información esté correctamente r
 
 En definitiva, el proyecto pretende proporcionar una solución que permita a la biblioteca gestionar sus recursos de manera organizada, mantener información fiable y ofrecer un servicio de préstamo más eficiente.
 
-![Diagrama](images/Trabajo IISSI.png)
+![Diagrama](images/TrabajoIISSI.png)
 
 ## 2. Glosario de términos
 
