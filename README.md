@@ -36,8 +36,6 @@ Además, el sistema deberá garantizar que la información esté correctamente r
 
 En definitiva, el proyecto pretende proporcionar una solución que permita a la biblioteca gestionar sus recursos de manera organizada, mantener información fiable y ofrecer un servicio de préstamo más eficiente.
 
-![Diagrama](images/TrabajoIISSI.png)
-
 ## 2. Glosario de términos
 
 - ISBN: Código normalizado internacional que identifica de forma única un libro.
@@ -46,14 +44,12 @@ En definitiva, el proyecto pretende proporcionar una solución que permita a la 
 
 ### 3.1. Requisitos generales
 
-El sistema deberá cumplir los siguientes requisitos generales:
-  - Gestión de usuarios: el sistema permitirá distinguir entre clientes y gestores y controlar las operaciones que puede realizar cada tipo de
-    usuario.
-  - Gestión del catálogo: se podrán registrar y consultar libros y sus creadores.
-  - Gestión de ejemplares: cada copia física estará identificada individualmente y asociada a un libro, una sucursal, y constara si esta alquilada
+  - **Gestión de usuarios**: el sistema permitirá distinguir entre clientes y gestores y controlar las operaciones que puede realizar cada tipo de usuario.
+  - **Gestión del catálogo**: se podrán registrar y consultar libros y sus creadores.
+  - **Gestión de ejemplares**: cada copia física estará identificada individualmente y asociada a un libro, una sucursal, y constara si esta alquilada
     y su estado de conservación.
-  - Gestión de sucursales: se almacenará la información de las diferentes sucursales de la biblioteca.
-  - Gestión de Alquileres: el sistema permitirá registrar préstamos, controlar las fechas previstas de devolución y registrar las devoluciones.
+  - **Gestión de sucursales**: se almacenará la información de las diferentes sucursales de la biblioteca.
+  - **Gestión de Alquileres**: el sistema permitirá registrar préstamos, controlar las fechas previstas de devolución y registrar las devoluciones.
     
 ### 3.2. Usuarios del sistema 
 
@@ -63,328 +59,233 @@ El sistema deberá cumplir los siguientes requisitos generales:
 
 ## 4. Catálogo de requisitos
 
-### 4.1. Requisitos funcionales (PRUEBAS ACEPTACION Quedan solo aqui)
+### 4.1. Requisitos de información
 
-#### R.F.01. Listado del catálogo de libros 
+#### R.I.1. Información de usuarios
+Como gestor del sistema, quiero registrar y consultar la información de los usuarios para mantener sus datos personales y de contacto.
 
-Como cliente, 
-quiero obtener un listado de los libros pudiendo filtrar por título, escritor, género, editorial o idioma, 
-para localizar obras de mi interés. 
+**Pruebas de aceptación**
+- **R.I.1.1** Comprobar que se pueden registrar el nombre y los apellidos del usuario.
+- **R.I.1.2** Comprobar que se puede almacenar su teléfono.
+- **R.I.1.3** Comprobar que se puede almacenar su dirección.
+- **R.I.1.4** Comprobar que la fecha de registro es opcional.
+- **R.I.1.5** Comprobar que cada usuario tiene un identificador único.
 
-**Prueba de aceptación**
-- Verificar que el sistema muestra el catálogo de libros y permite filtrar por título, escritor, género, editorial e idioma, devolviendo únicamente los libros que cumplen los criterios seleccionados.
-- Verificar que, al realizar una búsqueda sin resultados coincidentes, el sistema muestra un listado vacío e informa al usuario de que no se han encontrado libros.
-- Se debe aplicar la regla de negocio R.N.02, garantizando que cada copia física esté asociada a un único libro, y la regla R.N.08, permitiendo relacionar libros con varios creadores y viceversa.
+#### R.I.3. Información de gestores
+Como administrador del sistema, quiero registrar y consultar la información de los gestores para identificarlos y gestionar sus permisos administrativos.
 
-#### R.F.02. Consultar disponibilidad de un libro
+**Pruebas de aceptación**
+- **R.I.3.1** Comprobar que cada gestor tiene un número de empleado.
+- **R.I.3.2** Comprobar que se puede identificar a cada gestor de forma única.
 
-Como cliente, 
-quiero consultar la disponibilidad de un libro (qué copias físicas están disponibles y en qué sucursal se encuentran), 
-para saber si puedo alquilarlo.
+#### R.I.4. Información de sucursales
+Como gestor del sistema, quiero registrar y consultar la información de las sucursales para conocer sus datos de contacto y horarios de atención.
 
-**Prueba de aceptación**
-- Verificar que el sistema muestra las copias físicas disponibles del libro seleccionado, indicando la sucursal en la que se encuentra cada una.
-- Verificar que, cuando todas las copias físicas del libro están prestadas, el sistema indica que no hay ejemplares disponibles para préstamo.
-- Se debe aplicar la regla de negocio R.N.02, garantizando que cada copia corresponda a un único libro; la regla R.N.03, asegurando que cada copia esté asignada a una sucursal; la regla R.N.05, impidiendo que una misma copia tenga más de un préstamo activo simultáneamente; y la regla R.N.07, evitando que una copia prestada se considere disponible.
+**Pruebas de aceptación**
+- **R.I.4.1** Comprobar que se puede almacenar el nombre de la sucursal.
+- **R.I.4.2** Comprobar que se puede registrar su dirección.
+- **R.I.4.3** Comprobar que se puede registrar su teléfono.
+- **R.I.4.4** Comprobar que se puede almacenar el horario de atención.
+- **R.I.4.5** Comprobar que cada sucursal puede identificarse de forma inequívoca.
 
-#### R.F.03. Listado de copias físicas
+#### R.I.5. Información de libros
+Como usuario del sistema, quiero consultar la información de los libros para identificar sus características y conocer en qué sucursales se encuentran.
 
-Como gestor, 
-quiero obtener un listado de las copias físicas de un libro o de una sucursal, mostrando su estado y su estantería, 
-para localizar los ejemplares.
+**Pruebas de aceptación**
+- **R.I.5.1** Comprobar que se almacena el ISBN del libro.
+- **R.I.5.2** Comprobar que se registra el título.
+- **R.I.5.3** Comprobar que se puede almacenar el año de publicación.
+- **R.I.5.4** Comprobar que se registra el género literario.
+- **R.I.5.5** Comprobar que se almacena la editorial.
+- **R.I.5.6** Comprobar que se registra el idioma.
+- **R.I.5.7** Comprobar que se pueden asociar uno o varios escritores a un libro.
+- **R.I.5.8** Comprobar que se puede conocer la sucursal o las sucursales donde reside el libro.
 
-**Prueba de aceptación**
-- Verificar que el gestor puede consultar las copias físicas de un libro concreto y que cada resultado muestra su identificador, estado y estantería.
-- Verificar que el gestor puede consultar las copias físicas de una sucursal determinada y que únicamente se muestran las copias asignadas a dicha sucursal.
-- Se debe aplicar la regla de negocio R.N.02, garantizando que cada copia física corresponda a un único libro; la regla R.N.03, asegurando que cada copia esté asignada a una sucursal; y la regla R.N.09, permitiendo el acceso a esta funcionalidad únicamente a los gestores.
+#### R.I.6. Información de escritores
+Como usuario del sistema, quiero consultar la información de los escritores para conocer sus datos personales y su trayectoria.
 
-#### R.F.04. Listado de clientes
+**Pruebas de aceptación**
+- **R.I.6.1** Comprobar que se almacenan el nombre y los apellidos del escritor.
+- **R.I.6.2** Comprobar que se puede registrar su biografía.
+- **R.I.6.3** Comprobar que se puede almacenar su fecha de nacimiento.
+- **R.I.6.4** Comprobar que un escritor puede estar relacionado con varios libros.
 
-Como gestor, 
-quiero obtener un listado de los clientes (socios) de la biblioteca con sus datos, 
-para tenerlos localizados.
+#### R.I.7. Información de copias físicas
+Como gestor del sistema, quiero registrar y consultar la información de las copias físicas para controlar su estado, ubicación y disponibilidad.
 
-**Prueba de aceptación**
-- Verificar que el gestor puede consultar el listado de clientes y que cada registro muestra los datos definidos para el socio, como su identificador, nombre, apellidos y datos de contacto.
-- Verificar que cada cliente aparece identificado de forma inequívoca y que no existen identificadores duplicados entre los usuarios registrados.
-- Se debe aplicar la regla de negocio R.N.01, garantizando que cada usuario tenga un identificador único, y la regla R.N.09, permitiendo el acceso al listado únicamente a los gestores.
+**Pruebas de aceptación**
+- **R.I.7.1** Comprobar que cada copia física tiene un código de barras único.
+- **R.I.7.2** Comprobar que se registra el estado físico de la copia, que puede ser "bien" o "mal".
+- **R.I.7.3** Comprobar que se registra la disponibilidad de la copia, que puede ser "disponible" o "noDisponible".
+- **R.I.7.4** Comprobar que se puede almacenar la estantería donde se ubica.
+- **R.I.7.5** Comprobar que cada copia física está asignada a una sucursal.
+- **R.I.7.6** Comprobar que cada copia física corresponde a un único libro.
+- **R.I.7.7** Comprobar que un libro puede tener varias copias físicas.
 
-#### R.F.05. Listado de clientes sancionados
+#### R.I.8. Información de alquileres
+Como gestor del sistema, quiero registrar y consultar la información de los alquileres para controlar las operaciones de préstamo de copias físicas y conservar su historial.
 
-Como gestor, 
-quiero obtener un listado de los clientes que están sancionados, 
-para saber a quiénes no se les puede alquilar.
+**Pruebas de aceptación**
+- **R.I.8.1** Comprobar que se almacena la fecha de alquiler.
+- **R.I.8.2** Comprobar que se registra la fecha límite de devolución.
+- **R.I.8.3** Comprobar que la fecha de devolución efectiva se registra cuando se devuelve la copia y es opcional.
+- **R.I.8.4** Comprobar que se identifica al cliente que realiza el alquiler.
+- **R.I.8.5** Comprobar que se identifica la copia física alquilada.
+- **R.I.8.6** Comprobar que un cliente no puede realizar más de 3 alquileres en un mismo mes (R.N.1).
+- **R.I.8.7** Comprobar que la fecha de devolución efectiva es posterior a la fecha de alquiler (R.N.2).
+- **R.I.8.8** Comprobar que una copia con estado "mal" o "no disponible" no puede ser alquilada (R.N.3).
+- **R.I.8.9** Comprobar que el estado del alquiler se calcula (devuelto, vencido o activo) según las fechas (R.N.4).
+- **R.I.8.10** Comprobar que la disponibilidad de una copia se deriva de sus alquileres activos (R.N.5).
 
-**Prueba de aceptación**
-- Verificar que el sistema muestra únicamente los clientes que tienen una sanción vigente, incluyendo sus datos identificativos y la información de la sanción disponible.
-- Verificar que los clientes sin sanciones vigentes no aparecen en el listado y que un cliente deja de aparecer cuando su sanción deja de estar vigente.
-- Se debe aplicar la regla de negocio R.N.01, garantizando la identificación única de cada usuario; la regla R.N.04, impidiendo que se realicen préstamos a clientes que no cumplan las condiciones de alta; y la regla R.N.09, reservando esta consulta administrativa a los gestores.
 
-#### R.F.06. Listado de alquileres activos
+### 4.2. Reglas de negocio
 
-Como gestor, 
-quiero obtener un listado de los alquileres activos (todavía no devueltos), 
-para hacer el seguimiento de los préstamos en curso.
+#### R.N.1. Máximo de alquileres por cliente
+Un cliente no puede realizar más de 3 alquileres en un mismo mes.
 
-**Prueba de aceptación**
-- Verificar que el sistema muestra todos los préstamos que todavía no han sido devueltos, indicando los datos del cliente, el libro, la copia física y las fechas del préstamo y de devolución prevista.
-- Verificar que, cuando una copia física se devuelve y el préstamo queda registrado como finalizado, dicho préstamo deja de aparecer en el listado de alquileres activos.
-- Se debe aplicar la regla de negocio R.N.04, garantizando que los préstamos se realicen a clientes dados de alta; la regla R.N.05, impidiendo que una copia tenga varios préstamos activos simultáneamente; la regla R.N.06, validando las fechas del préstamo y de devolución prevista; la regla R.N.07, controlando la disponibilidad de las copias; y la regla R.N.09, restringiendo la consulta a los gestores.
+**Pruebas de aceptación**
+- **R.N.1.1** Comprobar que el sistema permite a un cliente realizar hasta 3 alquileres en el mismo mes.
+- **R.N.1.2** Comprobar que el sistema impide a un cliente realizar un cuarto alquiler en el mismo mes.
 
-#### R.F.07. Listado de alquileres vencidos
+#### R.N.2. Validación de la fecha de devolución efectiva
+La fecha de devolución efectiva debe ser posterior a la fecha de alquiler.
 
-Como gestor, 
-quiero obtener un listado de los alquileres cuya fecha límite de devolución ya ha pasado y aún no han sido devueltos, 
-para identificar a los usuarios morosos.
+**Pruebas de aceptación**
+- **R.N.2.1** Comprobar que el sistema permite registrar una fecha de devolución efectiva posterior a la fecha de alquiler.
+- **R.N.2.2** Comprobar que el sistema impide registrar una fecha de devolución efectiva anterior a la fecha de alquiler.
 
-**Prueba de aceptación**
-- Verificar que el sistema muestra los préstamos que no han sido devueltos y cuya fecha prevista de devolución es anterior a la fecha actual, indicando el cliente, el libro y los datos del préstamo.
-- Verificar que los préstamos cuya fecha prevista de devolución coincide con la fecha actual o es posterior a ella no aparecen como vencidos, y que los préstamos ya devueltos tampoco se incluyen en el listado.
-- Se debe aplicar la regla de negocio R.N.01, identificando inequívocamente a cada usuario; la regla R.N.05, garantizando la exclusividad de los préstamos activos por copia; la regla R.N.06, validando las fechas del préstamo y de devolución prevista; la regla R.N.09, reservando esta consulta a los gestores; y la regla R.N.10, conservando los préstamos devueltos en el historial.
+#### R.N.3. Copia alquilable
+Una copia con estado "mal" o "no disponible" no puede ser alquilada.
 
-#### R.F.08. Listado de escritores
+**Pruebas de aceptación**
+- **R.N.3.1** Comprobar que el sistema permite alquilar una copia con estado "bien" y disponible.
+- **R.N.3.2** Comprobar que el sistema impide alquilar una copia con estado "mal".
+- **R.N.3.3** Comprobar que el sistema impide alquilar una copia que está "no disponible".
 
-Como cliente, 
-quiero consultar el listado de escritores y su información, 
-para conocer los autores disponibles en la biblioteca.
+#### R.N.4. Estado del alquiler calculable
+El estado de un alquiler se calcula de la siguiente forma:
+- Si la fecha de devolución no es nula, el estado es "devuelto".
+- Si hoy es posterior a la fecha límite de devolución, el estado es "vencido".
+- Si hoy es anterior o igual a la fecha límite de devolución, el estado es "activo".
 
-**Prueba de aceptación**
-- Verificar que el sistema muestra el listado de escritores registrados y la información disponible de cada uno, como su identificador, nombre y datos biográficos, si están definidos.
-- Verificar que, al seleccionar un escritor, el sistema permite identificar los libros asociados a él y que un libro con varios creadores aparece relacionado con todos ellos.
-- Se debe aplicar la regla de negocio R.N.08, garantizando la relación de varios a varios entre libros y creadores.
+**Pruebas de aceptación**
+- **R.N.4.1** Comprobar que un alquiler con fecha de devolución registrada se muestra como "devuelto".
+- **R.N.4.2** Comprobar que un alquiler sin devolución y con fecha límite ya pasada se muestra como "vencido".
+- **R.N.4.3** Comprobar que un alquiler sin devolución y con fecha límite no pasada se muestra como "activo".
 
-#### R.F.09. Listado de sucursales
+#### R.N.5. Disponibilidad derivada de los alquileres
+La disponibilidad de una copia física se deriva de sus alquileres:
+- "disponible": no tiene ningún alquiler activo.
+- "noDisponible": tiene al menos un alquiler activo.
 
-Como cliente, 
-quiero consultar las sucursales de la biblioteca con su dirección, teléfono y horario de atención, 
-para saber dónde acudir.
+**Pruebas de aceptación**
+- **R.N.5.1** Comprobar que una copia sin alquileres activos se muestra como "disponible".
+- **R.N.5.2** Comprobar que una copia con un alquiler activo se muestra como "noDisponible".
+- **R.N.5.3** Comprobar que una copia pasa a estar "disponible" después de registrar la devolución de su alquiler activo.
 
-**Prueba de aceptación**
-- Verificar que el sistema muestra el listado de sucursales con su dirección, teléfono y horario de atención correspondiente.
-- Verificar que, al seleccionar una sucursal, se muestra su información específica y que los datos de las distintas sucursales no se confunden entre sí.
-- Se debe aplicar la regla de negocio R.N.03, garantizando que cada copia física esté asignada a una sucursal.
+
+### 4.3. Requisitos funcionales
+
+#### R.F.1. Listado del catálogo de libros
+Como cliente, quiero obtener un listado de los libros pudiendo filtrar por título, escritor, género, editorial o idioma, para localizar obras de mi interés.
+
+**Pruebas de aceptación**
+- **R.F.1.1** Verificar que el sistema muestra el catálogo y permite filtrar por título (R.I.5.2), escritor (R.I.5.7), género (R.I.5.4), editorial (R.I.5.5) e idioma (R.I.5.6), devolviendo únicamente los libros que cumplen los criterios seleccionados.
+- **R.F.1.2** Verificar que, al realizar una búsqueda sin resultados coincidentes, el sistema muestra un listado vacío e informa al usuario de que no se han encontrado libros.
+- **R.F.1.3** Verificar que un libro con varios escritores aparece correctamente relacionado con todos ellos (R.I.5.7).
+
+#### R.F.2. Consultar disponibilidad de un libro
+Como cliente, quiero consultar la disponibilidad de un libro (qué copias físicas están disponibles y en qué sucursal se encuentran), para saber si puedo alquilarlo.
+
+**Pruebas de aceptación**
+- **R.F.2.1** Verificar que el sistema muestra las copias físicas disponibles del libro seleccionado (R.I.7.3), indicando la sucursal en la que se encuentra cada una (R.I.7.5).
+- **R.F.2.2** Verificar que, cuando todas las copias físicas del libro están alquiladas, el sistema indica que no hay ejemplares disponibles para alquilar (R.N.5).
+- **R.F.2.3** Se debe aplicar la regla de negocio R.N.5 (disponibilidad derivada de los alquileres).
+
+#### R.F.3. Listado de copias físicas
+Como gestor, quiero obtener un listado de las copias físicas de un libro o de una sucursal, mostrando su estado y su estantería, para localizar los ejemplares.
+
+**Pruebas de aceptación**
+- **R.F.3.1** Verificar que el gestor puede consultar las copias físicas de un libro concreto y que cada resultado muestra su identificador, estado (R.I.7.2) y estantería (R.I.7.4).
+- **R.F.3.2** Verificar que el gestor puede consultar las copias físicas de una sucursal determinada y que únicamente se muestran las copias asignadas a dicha sucursal (R.I.7.5).
+
+#### R.F.4. Listado de clientes
+Como gestor, quiero obtener un listado de los clientes (socios) de la biblioteca con sus datos, para tenerlos localizados.
+
+**Pruebas de aceptación**
+- **R.F.4.1** Verificar que el gestor puede consultar el listado de clientes y que cada registro muestra los datos definidos para el socio (R.I.2.1), como nombre y apellidos (R.I.1.1) y datos de contacto (R.I.1.2).
+- **R.F.4.2** Verificar que cada cliente aparece identificado de forma inequívoca y que no existen identificadores duplicados entre los usuarios registrados (R.I.1.5).
+
+#### R.F.5. Listado de clientes sancionados
+Como gestor, quiero obtener un listado de los clientes que están sancionados, para saber a quiénes no se les puede alquilar.
+
+**Pruebas de aceptación**
+- **R.F.5.1** Verificar que el sistema muestra únicamente los clientes que tienen una sanción vigente (R.I.2.3), incluyendo sus datos identificativos.
+- **R.F.5.2** Verificar que los clientes sin sanciones vigentes no aparecen en el listado y que un cliente deja de aparecer cuando su sanción deja de estar vigente (R.I.2.3).
+
+#### R.F.6. Listado de alquileres activos
+Como gestor, quiero obtener un listado de los alquileres activos (todavía no devueltos y dentro de plazo), para hacer el seguimiento de las operaciones en curso.
+
+**Pruebas de aceptación**
+- **R.F.6.1** Verificar que el sistema muestra todos los alquileres que todavía no han sido devueltos y cuya fecha límite de devolución no ha pasado (R.N.4.3), indicando los datos del cliente, el libro, la copia física y las fechas del alquiler y de devolución prevista (R.I.8.1, R.I.8.2).
+- **R.F.6.2** Verificar que, cuando una copia física se devuelve y el alquiler queda registrado como finalizado (R.I.8.3), dicho alquiler deja de aparecer en el listado de alquileres activos (R.N.4.1).
+- **R.F.6.3** Se debe aplicar la regla de negocio R.N.4 (estado del alquiler calculable).
+
+#### R.F.7. Listado de alquileres vencidos
+Como gestor, quiero obtener un listado de los alquileres cuya fecha límite de devolución ya ha pasado y aún no han sido devueltos, para identificar a los usuarios morosos.
+
+**Pruebas de aceptación**
+- **R.F.7.1** Verificar que el sistema muestra los alquileres que no han sido devueltos y cuya fecha prevista de devolución es anterior a la fecha actual (R.N.4.2), indicando el cliente, el libro y los datos del alquiler.
+- **R.F.7.2** Verificar que los alquileres cuya fecha prevista de devolución coincide con la fecha actual o es posterior a ella no aparecen como vencidos, y que los alquileres ya devueltos tampoco se incluyen en el listado (R.N.4).
+- **R.F.7.3** Se debe aplicar la regla de negocio R.N.4 (estado del alquiler calculable).
+
+#### R.F.8. Listado de escritores
+Como cliente, quiero consultar el listado de escritores y su información, para conocer los autores disponibles en la biblioteca.
+
+**Pruebas de aceptación**
+- **R.F.8.1** Verificar que el sistema muestra el listado de escritores registrados y la información disponible de cada uno, como su identificador, nombre (R.I.6.1) y datos biográficos (R.I.6.2), si están definidos.
+- **R.F.8.2** Verificar que, al seleccionar un escritor, el sistema permite identificar los libros asociados a él (R.I.6.4) y que un libro con varios creadores aparece relacionado con todos ellos (R.I.5.7).
+
+#### R.F.9. Listado de sucursales
+Como cliente, quiero consultar las sucursales de la biblioteca con su dirección, teléfono y horario de atención, para saber dónde acudir.
+
+**Pruebas de aceptación**
+- **R.F.9.1** Verificar que el sistema muestra el listado de sucursales con su dirección (R.I.4.2), teléfono (R.I.4.3) y horario de atención (R.I.4.4) correspondiente.
+- **R.F.9.2** Verificar que, al seleccionar una sucursal, se muestra su información específica y que los datos de las distintas sucursales no se confunden entre sí (R.I.4.5).
 
 #### R.F.10. Listado de libros de una sucursal
+Como gestor, quiero consultar los libros que residen en una sucursal determinada, para conocer el fondo de cada sede.
 
-Como gestor, 
-quiero consultar los libros que residen en una sucursal determinada, 
-para conocer el fondo de cada sede.
-
-**Prueba de aceptación**
-- Verificar que el gestor puede seleccionar una sucursal y obtener el listado de libros que tienen copias físicas asignadas a ella.
-- Verificar que un libro con varias copias en la misma sucursal aparece una sola vez en el listado de títulos, y que no se muestran libros que únicamente tengan copias asignadas a otras sucursales.
-- Se debe aplicar la regla de negocio R.N.02, garantizando la correspondencia entre libros y copias físicas; la regla R.N.03, asegurando que cada copia esté asignada a una sucursal; y la regla R.N.09, permitiendo el acceso a esta consulta únicamente a los gestores.
+**Pruebas de aceptación**
+- **R.F.10.1** Verificar que el gestor puede seleccionar una sucursal y obtener el listado de libros que residen en ella (R.I.5.8).
+- **R.F.10.2** Verificar que un libro que reside en varias sucursales aparece en el listado de cada una de ellas (R.I.5.8).
 
 #### R.F.11. Consultar la información de un libro
+Como cliente, quiero consultar los datos de un libro concreto (título, escritor/es, año, género, editorial e idioma), para decidir si me interesa.
 
-Como cliente, 
-quiero consultar los datos de un libro concreto (título, escritor/es, año, género, editorial e idioma), 
-para decidir si me interesa.
-
-**Prueba de aceptación**
-- Verificar que, al seleccionar un libro del catálogo, el sistema muestra su título, escritor o escritores, año de publicación, género, editorial e idioma, siempre que estos datos estén registrados.
-- Verificar que, al consultar un libro con varios creadores, el sistema muestra a todos los creadores asociados y que, si el identificador del libro no existe, informa de que no se ha encontrado el libro solicitado.
-- Se debe aplicar la regla de negocio R.N.02, garantizando que el libro consultado esté correctamente relacionado con sus copias físicas, y la regla R.N.08, permitiendo que un libro esté asociado a varios creadores.
-
-#### 4.1.1. Requisitos de información
-
-##### R.I.01. Información de usuarios
-Como gestor del sistema, 
-quiero registrar y consultar la información de los usuarios 
-para mantener sus datos personales y de contacto.
-
-**Prueba de aceptación**
-- Comprobar que se pueden registrar el nombre y los apellidos del usuario.
-- Comprobar que se puede almacenar su teléfono.
-- Comprobar que se puede almacenar su dirección.
-- Comprobar que la fecha de registro es opcional.
-- Comprobar que cada usuario tiene un identificador único.
-
-R.I.02. Información de clientes (socios)
-Como gestor del sistema, 
-quiero registrar y consultar la información de los clientes
-para gestionar su condición de socio y sus préstamos.
-
-**Prueba de aceptación**
-- Comprobar que cada cliente tiene un número de socio único.
-- Comprobar que se almacena la fecha de alta del cliente.
-- Comprobar que se puede registrar si el cliente está sancionado.
-- Comprobar que el estado de sanción es opcional.
-- Comprobar que cada cliente dispone de los datos comunes de usuario.
-- Comprobar que se puede identificar si un cliente está dado de alta.
-
-R.I.03. Información de gestores
-Como administrador del sistema, 
-quiero registrar y consultar la información de los gestores 
-para identificarlos y gestionar sus permisos administrativos.
-
-**Prueba de aceptación**
-- Comprobar que cada gestor tiene un número de empleado.
-- Comprobar que se almacenan los datos comunes de usuario.
-- Comprobar que se puede identificar a cada gestor de forma única.
-
-R.I.04. Información de sucursales
-Como gestor del sistema, 
-quiero registrar y consultar la información de las sucursales 
-para conocer sus datos de contacto y horarios de atención.
-
-**Prueba de aceptación**
-- Comprobar que se puede almacenar el nombre de la sucursal.
-- Comprobar que se puede registrar su dirección.
-- Comprobar que se puede registrar su teléfono.
-- Comprobar que se puede almacenar el horario de atención.
-- Comprobar que cada sucursal puede identificarse de forma inequívoca.
-
-R.I.05. Información de libros
-Como usuario del sistema, 
-quiero consultar la información de los libros 
-para identificar sus características y conocer en qué sucursales se encuentran.
-
-**Prueba de aceptación**
-- Comprobar que se almacena el ISBN del libro.
-- Comprobar que se registra el título.
-- Comprobar que se puede almacenar el año de publicación.
-- Comprobar que se registra el género literario.
-- Comprobar que se almacena la editorial.
-- Comprobar que se registra el idioma.
-- Comprobar que se pueden asociar uno o varios escritores a un libro.
-- Comprobar que se puede conocer la sucursal o las sucursales donde reside el libro.
-
-R.I.06. Información de escritores
-Como usuario del sistema, 
-quiero consultar la información de los escritores 
-para conocer sus datos personales y su trayectoria.
-
-**Prueba de aceptación**
-- Comprobar que se almacena el nombre y los apellidos del escritor.
-- Comprobar que se puede registrar su biografía.
-- Comprobar que se puede almacenar su fecha de nacimiento.
-- Comprobar que un escritor puede estar relacionado con varios libros.
-
-R.I.07. Información de copias físicas
-Como gestor del sistema, 
-quiero registrar y consultar la información de las copias físicas 
-para controlar su estado, ubicación y disponibilidad.
-
-**Prueba de aceptación**
-- Comprobar que cada copia física tiene un código de barras único.
-- Comprobar que se registra el estado físico de la copia, que puede ser bien o mal.
-- Comprobar que se registra la disponibilidad de la copia, que puede ser disponible o no disponible.
-- Comprobar que se puede almacenar la estantería donde se ubica.
-- Comprobar que cada copia física está asignada a una sucursal.
-- Comprobar que cada copia física corresponde a un único libro.
-- Comprobar que un libro puede tener varias copias físicas.
-
-R.I.08. Información de préstamos
-Como gestor del sistema, 
-quiero registrar y consultar la información de los préstamos 
-para controlar los alquileres de copias físicas y conservar su historial.
-
-**Prueba de aceptación**
-- Comprobar que se almacena la fecha de inicio del préstamo.
-- Comprobar que se registra la fecha límite de devolución.
-- Comprobar que la fecha límite de devolución no es anterior a la fecha de inicio del préstamo.
-- Comprobar que la fecha de devolución efectiva se registra cuando se devuelve la copia.
-- Comprobar que se identifica al cliente que realiza el préstamo.
-- Comprobar que se identifica la copia física prestada.
-- Comprobar que solo los clientes dados de alta pueden realizar préstamos.
-- Comprobar que una misma copia física no puede tener más de un préstamo activo simultáneamente.
-- Comprobar que una copia física prestada no aparece como disponible para un nuevo préstamo.
-- Comprobar que los préstamos devueltos se conservan para mantener el historial de operaciones.
-
-#### 4.1.2. Reglas de negocio
-
-##### R.N.01. Identificador único de usuarios
-
-Cada usuario debe tener un identificador único.
-
-**Prueba de aceptación**
-- Comprobar que el sistema permite registrar un usuario con un identificador que no existe previamente.
-- Comprobar que el sistema impide registrar dos usuarios con el mismo identificador.
-
-##### R.N.02. Correspondencia entre libros y copias físicas
-
-Cada copia física debe corresponder a un único libro, aunque un libro pueda tener varias copias.
-
-**Prueba de aceptación**
-- Comprobar que el sistema permite asociar varias copias físicas a un mismo libro.
-- Comprobar que el sistema impide asociar una misma copia física a más de un libro simultáneamente.
-
-##### R.N.03. Asignación de copias a sucursales
-
-Cada copia física debe estar asignada a una sucursal.
-
-**Prueba de aceptación**
-- Comprobar que el sistema permite registrar una copia física asignada a una sucursal existente.
-- Comprobar que el sistema impide registrar una copia física sin una sucursal asignada.
-
-##### R.N.04. Validación del estado de alta del cliente
-
-Un préstamo solo puede realizarse a un cliente que este dado de alta.
-
-**Prueba de aceptación**
-- Comprobar que el sistema permite realizar un préstamo a un cliente que está dado de alta.
-- Comprobar que el sistema impide realizar un préstamo a un cliente que no está dado de alta.
-
-##### R.N.05. Exclusividad de préstamos activos por copia
-
-Una misma copia física no puede tener más de un préstamo activo simultáneamente.
-
-**Prueba de aceptación**
-- Comprobar que el sistema permite realizar un préstamo de una copia física que no tiene ningún préstamo activo.
-- Comprobar que el sistema impide realizar un nuevo préstamo de una copia física que ya tiene un préstamo activo.
-- Comprobar que el sistema permite volver a prestar la copia física una vez que se ha registrado la devolución del préstamo anterior.
-
-##### R.N.06. Validación de fechas de préstamo y devolución
-
-La fecha prevista de devolución no puede ser anterior a la fecha del préstamo.
-
-**Prueba de aceptación**
-- Comprobar que el sistema permite registrar un préstamo cuya fecha prevista de devolución es posterior a la fecha del préstamo.
-- Comprobar que el sistema permite registrar un préstamo cuya fecha prevista de devolución coincide con la fecha del préstamo, si no existe otra restricción.
-- Comprobar que el sistema impide registrar un préstamo cuya fecha prevista de devolución sea anterior a la fecha del préstamo..
-
-##### R.N.07. Control de disponibilidad de copias
-
-Una copia prestada no puede considerarse disponible para un nuevo préstamo.
-
-**Prueba de aceptación**
-- Comprobar que el sistema muestra como disponibles las copias físicas que no tienen ningún préstamo activo.
-- Comprobar que el sistema muestra como no disponibles las copias físicas que tienen un préstamo activo.
-- Comprobar que el sistema impide seleccionar una copia prestada para realizar un nuevo préstamo.
-- Comprobar que el sistema actualiza la disponibilidad de una copia física después de registrar su devolución.
-
-##### R.N.08. Correspondencia entre libros y Creadores
-
-Un libro puede tener varios creadores y un creador puede estar relacionado con varios libros.
-
-**Prueba de aceptación**
-- Comprobar que el sistema permite asociar varios creadores a un mismo libro.
-- Comprobar que el sistema permite asociar un mismo creador a varios libros.
-- Comprobar que el sistema muestra correctamente los creadores asociados a cada libro.
-- Comprobar que el sistema muestra correctamente los libros asociados a cada creador.
-
-##### R.N.09. Control de permisos según el usuario
-
-Solo los gestores pueden realizar las operaciones administrativas reservadas a ese perfil.
-
-**Prueba de aceptación**
-- Comprobar que un gestor puede realizar las operaciones administrativas reservadas a su perfil.
-- Comprobar que un usuario sin perfil de gestor no puede realizar las operaciones administrativas restringidas.
-- Comprobar que el sistema impide el acceso no autorizado a dichas operaciones, incluso si se intenta acceder directamente a ellas sin utilizar la interfaz habitual.
-
-##### R.N.10. Conservación del historial de prestamos
-
-Los préstamos devueltos deben conservarse para mantener el historial de operaciones.
-
-**Prueba de aceptación**
-- Comprobar que el sistema conserva el registro de un préstamo después de registrar su devolución.
-- Comprobar que el préstamo devuelto aparece en el historial del cliente.
-- Comprobar que el sistema conserva los datos del préstamo, incluidas las fechas correspondientes.
-- Comprobar que el préstamo devuelto deja de figurar como activo sin eliminarse del historial de operaciones.
+**Pruebas de aceptación**
+- **R.F.11.1** Verificar que, al seleccionar un libro del catálogo, el sistema muestra su título (R.I.5.2), escritor o escritores (R.I.5.7), año de publicación (R.I.5.3), género (R.I.5.4), editorial (R.I.5.5) e idioma (R.I.5.6), siempre que estos datos estén registrados.
+- **R.F.11.2** Verificar que, al consultar un libro con varios creadores, el sistema muestra a todos los creadores asociados (R.I.5.7) y que, si el identificador del libro no existe, informa de que no se ha encontrado el libro solicitado (R.I.5.1).
 
 
-### 4.2. Mapa de historias de usuario (opcional)
+### 4.4. Requisitos no funcionales
+
+#### R.N.F.1. Control de acceso
+Como director de la biblioteca, quiero que solo los gestores puedan acceder a las funciones de gestión y que los clientes únicamente consulten el catálogo y sus propios datos, para proteger la información.
+
+#### R.N.F.2. Usabilidad
+Como cliente, quiero una interfaz sencilla e intuitiva para consultar el catálogo.
+
+#### R.N.F.3. Disponibilidad
+Como gestor, quiero que el sistema esté disponible durante todo el horario de apertura de las sucursales, para poder atender de la mejor forma posible al cliente.
+
+#### R.N.F.4. Seguridad de los datos
+Como director de la biblioteca, quiero que los datos personales de los clientes y la información de sus alquileres se almacenen de forma segura, para evitar accesos no autorizados y proteger su privacidad.
+
+#### R.N.F.5. Compatibilidad
+Como cliente, quiero poder acceder al sistema desde los navegadores web más utilizados y desde diferentes dispositivos, para consultar el catálogo independientemente del equipo que utilice.
+
+### 4.5. Mapa de historias de usuario
 
 | Actividad | Tarea | Historia de usuario | Prioridad |
 |-----------|-------|---------------------|-----------|
@@ -398,55 +299,19 @@ Los préstamos devueltos deben conservarse para mantener el historial de operaci
 | Gestión de sucursales | Consultar copias físicas | Como gestor, quiero consultar las copias físicas por libro o sucursal, incluyendo su estado y estantería, para localizar los ejemplares. | Alta |
 | Gestión de clientes | Registrar clientes | Como gestor, quiero registrar nuevos clientes para permitirles utilizar los servicios de la biblioteca. | Alta |
 | Gestión de clientes | Gestionar sanciones | Como gestor, quiero registrar y actualizar sanciones para controlar las restricciones aplicadas a los clientes. | Media |
-| Gestión de préstamos | Consultar préstamos propios | Como cliente, quiero consultar mis préstamos activos y las fechas previstas de devolución. | Alta |
-| Gestión de préstamos | Registrar préstamos | Como gestor, quiero registrar préstamos para saber qué ejemplares tiene cada cliente. | Alta |
-| Gestión de préstamos | Registrar devoluciones | Como gestor, quiero registrar devoluciones para actualizar la disponibilidad de los ejemplares. | Alta |
-| Gestión de préstamos | Consultar historial | Como gestor, quiero consultar el historial de préstamos para revisar las operaciones realizadas. | Media |
-| Gestión de préstamos | Consultar préstamos activos | Como gestor, quiero consultar los préstamos activos para realizar el seguimiento de los ejemplares prestados. | Alta |
-| Gestión de préstamos | Consultar préstamos vencidos | Como gestor, quiero consultar los préstamos vencidos para identificar las devoluciones pendientes. | Media |
-| Gestión de préstamos | Validar disponibilidad | Como gestor, quiero que el sistema compruebe la disponibilidad de una copia antes de registrar un préstamo para evitar asignaciones duplicadas. | Alta |
-| Gestión de préstamos | Validar clientes | Como gestor, quiero que el sistema compruebe que un cliente está dado de alta y no tiene restricciones que impidan el préstamo antes de registrar una operación. | Alta |
-
-### 4.3. Requisitos no funcionales (opcional)
-
-**R.N.F. 01. Control de acceso**
-Como director de la biblioteca, 
-quiero que sólo los gestores puedan acceder a las funciones de gestión y que los clientes únicamente consulten el catálogo y sus propios datos, 
-para proteger la información.
-
-**R.N.F. 02. Usabilidad**
-Como cliente, 
-quiero una interfaz sencilla e intuitiva 
-para consultar el catálogo.
-
-**R.N.F. 03. Disponibilidad**
-Como Gestor, 
-quiero que el sistema esté disponible durante todo el horario de apertura de las sucursales
-para poder atender de la mejor forma posible al cliente.
-
-**R.N.F. 04. Seguridad de los datos**
-Como director de la biblioteca, 
-quiero que los datos personales de los clientes y la información de sus préstamos se almacenen de forma segura, 
-para evitar accesos no autorizados y proteger su privacidad.
-
-**R.N.F. 05. Compatibilidad**
-Como cliente, 
-quiero poder acceder al sistema desde los navegadores web más utilizados y desde diferentes dispositivos, 
-para consultar el catálogo independientemente del equipo que utilice.
-
-**R.N.F. 06. Seguridad**
-Como Gestor, 
-quiero las operaciones administrativas restringidas a los usuarios autorizados, 
-para consultar el catálogo independientemente del equipo que utilice.
-
-**R.N.F. 07. Consulta del historial**
-Como Gestor, 
-quiero que los préstamos anteriores se conserven 
-para poder consultar las operaciones realizadas.
+| Gestión de alquileres | Consultar alquileres propios | Como cliente, quiero consultar mis alquileres activos y las fechas previstas de devolución. | Alta |
+| Gestión de alquileres | Registrar alquileres | Como gestor, quiero registrar alquileres para saber qué ejemplares tiene cada cliente. | Alta |
+| Gestión de alquileres | Registrar devoluciones | Como gestor, quiero registrar devoluciones para actualizar la disponibilidad de los ejemplares. | Alta |
+| Gestión de alquileres | Consultar historial | Como gestor, quiero consultar el historial de alquileres para revisar las operaciones realizadas. | Media |
+| Gestión de alquileres | Consultar alquileres activos | Como gestor, quiero consultar los alquileres activos para realizar el seguimiento de los ejemplares alquilados. | Alta |
+| Gestión de alquileres | Consultar alquileres vencidos | Como gestor, quiero consultar los alquileres vencidos para identificar las devoluciones pendientes. | Media |
+| Gestión de alquileres | Validar disponibilidad | Como gestor, quiero que el sistema compruebe la disponibilidad de una copia antes de registrar un alquiler para evitar asignaciones duplicadas. | Alta |
+| Gestión de alquileres | Validar clientes | Como gestor, quiero que el sistema compruebe que un cliente cumple las condiciones antes de registrar un alquiler. | Alta |
 
 -- fin entregable 1 --
 
 ## 5. Modelo conceptual
+![Diagrama](images/TrabajoIISSI.png)
 
 ### 5.1. Diagramas de clases UML
 
