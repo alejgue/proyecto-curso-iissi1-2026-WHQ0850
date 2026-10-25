@@ -323,7 +323,7 @@ Como cliente, quiero poder acceder al sistema desde los navegadores web más uti
 
 ### 5.1. Diagramas de clases UML
 
-![Diagrama](images/ModeloConceptual.jpg)
+![Diagrama](images/UML.jpg)
 
 ### 5.2. Escenarios de prueba
 
