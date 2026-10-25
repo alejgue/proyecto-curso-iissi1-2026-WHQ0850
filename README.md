@@ -321,7 +321,7 @@ Como cliente, quiero poder acceder al sistema desde los navegadores web más uti
 -- fin entregable 1 --
 
 ## 5. Modelo conceptual
-![Diagrama](images/TrabajoIISSI.png)
+![Diagrama](images/ModeloConceptual.jpg)
 
 ### 5.1. Diagramas de clases UML
 
