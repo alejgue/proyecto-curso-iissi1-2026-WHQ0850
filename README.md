@@ -326,8 +326,28 @@ Como cliente, quiero poder acceder al sistema desde los navegadores web más uti
 ![Diagrama](images/UML.jpg)
 
 ### 5.2. Escenarios de prueba
+#### 5.2.1.**Diagramas de escenario de prueba UML:**
 
-- con descripción textual y diagrama de objetos UML.
+![Diagrama](images/UMLPrueba.jpg)
+
+#### 5.2.2.**Descripción textual:**
+Se comprueba el comportamiento del sistema ante operaciones de consulta y préstamo sobre una sede física:
+
+1. **Gestión de la sede:**
+   - La sede **"Sucursal Centro"** (s1: Sucursal) está gestionada por el empleado **Manuel Navarro** (g1: Gestor), vinculado mediante el enlace "gestiona".
+
+2. **Catálogo y autores:**
+   - En el catálogo está registrada la novela **"Cien años de soledad"** (l1: Libro), cuyo autor es **Gabriel García Márquez** (e1: Escritor), relacionados mediante el enlace "escribe".
+
+3. **Copias físicas y disponibilidad (RN-3 y RN-5):**
+   - El libro se compone mediante "tiene" de tres ejemplares físicos ubicados en la sucursal ("se ubica en"):
+     - **cf1: Copia_Fisica**: En estantería "E-01", en estado "bien". Al tener un alquiler activo en curso (a1: Alquiler), la regla **RN-5** deriva su disponibilidad a /disponibilidad = "noDisponible".
+     - **cf2: Copia_Fisica**: En estantería "E-02", en estado "bien". No tiene ningún alquiler activo, por lo que **RN-5** deriva su disponibilidad a /disponibilidad = "disponible". Es un ejemplar completamente apto para ser alquilado (**RN-3**).
+     - **cf3: Copia_Fisica**: En estantería "E-03", en estado "mal". Aunque no tiene alquileres activos y figura como /disponibilidad = "disponible", la regla **RN-3** impide que pueda alquilarse debido a su deterioro físico.
+
+4. **Operaciones de clientes (RN-1, RN-4 y RN-6):**
+   - **c1: Cliente (Laura Gómez)**: Socia no sancionada (sancionado = null). Tiene en curso el alquiler **a1: Alquiler** sobre la copia **cf1** mediante el enlace "alquila". Al ser su único préstamo del mes, cumple el límite máximo de 3 alquileres mensuales (**RN-1**). Como la fecha de devolución efectiva no se ha registrado (fechaDevolucionEfectiva = null) y aún no ha vencido la fecha límite (15/10/2026), el estado del alquiler se calcula como "activo" (**RN-4**).
+   - **c2: Cliente (Marcos Soto)**: Socio con sanción activa (sancionado = true). En aplicación de la regla **RN-6**, el sistema bloquea cualquier intento de registrar un nuevo alquiler a su nombre mientras persista la sanción.
 
 ## 6. Matrices de trazabilidad
 
