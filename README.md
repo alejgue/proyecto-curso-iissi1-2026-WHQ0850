@@ -308,8 +308,6 @@ Como cliente, quiero poder acceder al sistema desde los navegadores web más uti
 | Gestión de alquileres | Validar disponibilidad | Como gestor, quiero que el sistema compruebe la disponibilidad de una copia antes de registrar un alquiler para evitar asignaciones duplicadas. | Alta |
 | Gestión de alquileres | Validar clientes | Como gestor, quiero que el sistema compruebe que un cliente cumple las condiciones antes de registrar un alquiler. | Alta |
 
--- fin entregable 1 --
-
 ## 5. Modelo conceptual
 ![Diagrama](images/TrabajoIISSI.png)
 
