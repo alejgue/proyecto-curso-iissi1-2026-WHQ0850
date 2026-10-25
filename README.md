@@ -44,12 +44,11 @@ En definitiva, el proyecto pretende proporcionar una solución que permita a la 
 
 ### 3.1. Requisitos generales
 
-  - **Gestión de usuarios**: el sistema permitirá distinguir entre clientes y gestores y controlar las operaciones que puede realizar cada tipo de usuario.
-  - **Gestión del catálogo**: se podrán registrar y consultar libros y sus creadores.
-  - **Gestión de ejemplares**: cada copia física estará identificada individualmente y asociada a un libro, una sucursal, y constara si esta alquilada
-    y su estado de conservación.
-  - **Gestión de sucursales**: se almacenará la información de las diferentes sucursales de la biblioteca.
-  - **Gestión de Alquileres**: el sistema permitirá registrar préstamos, controlar las fechas previstas de devolución y registrar las devoluciones.
+  - **R.G.1. Gestión de usuarios** el sistema permitirá distinguir entre clientes y gestores y controlar las operaciones que puede realizar cada tipo de usuario.
+  - **R.G.2. Gestión del catálogo** mantener actualizado el catálogo de libros y escritores, para ofrecer los fondos bibliográficos a los usuarios.
+  - **R.G.3. Gestión de ejemplares y sucursales** registrar las sucursales y localizar las copias físicas en cada una de ellas, para controlar la ubicación del inventario.
+  - **R.G.4. Gestión de alquileres** quiero registrar los préstamos y devoluciones de ejemplares, para supervisar el flujo de libros y verificar las fechas límite.
+
     
 ### 3.2. Usuarios del sistema 
 
@@ -70,6 +69,14 @@ Como gestor del sistema, quiero registrar y consultar la información de los usu
 - **R.I.1.3** Comprobar que se puede almacenar su dirección.
 - **R.I.1.4** Comprobar que la fecha de registro es opcional.
 - **R.I.1.5** Comprobar que cada usuario tiene un identificador único.
+
+#### R.I.2. Información de clientes
+Como gestor del sistema, quiero registrar y consultar los datos específicos de los clientes para gestionar su condición de socios y controlar sus derechos de préstamo.
+
+**Pruebas de aceptación**
+- **R.I.2.1** Comprobar que cada cliente tiene un número de socio único.
+- **R.I.2.2** Comprobar que se registra la fecha de alta del cliente en el sistema.
+- **R.I.2.3** Comprobar que se puede registrar si el cliente tiene una sanción vigente, siendo este dato opcional.
 
 #### R.I.3. Información de gestores
 Como administrador del sistema, quiero registrar y consultar la información de los gestores para identificarlos y gestionar sus permisos administrativos.
@@ -99,7 +106,7 @@ Como usuario del sistema, quiero consultar la información de los libros para id
 - **R.I.5.5** Comprobar que se almacena la editorial.
 - **R.I.5.6** Comprobar que se registra el idioma.
 - **R.I.5.7** Comprobar que se pueden asociar uno o varios escritores a un libro.
-- **R.I.5.8** Comprobar que se puede conocer la sucursal o las sucursales donde reside el libro.
+- **R.I.5.8** Comprobar que se puede conocer en qué sucursales está disponible un libro a través de sus copias físicas asignadas.
 
 #### R.I.6. Información de escritores
 Como usuario del sistema, quiero consultar la información de los escritores para conocer sus datos personales y su trayectoria.
@@ -129,13 +136,9 @@ Como gestor del sistema, quiero registrar y consultar la información de los alq
 - **R.I.8.1** Comprobar que se almacena la fecha de alquiler.
 - **R.I.8.2** Comprobar que se registra la fecha límite de devolución.
 - **R.I.8.3** Comprobar que la fecha de devolución efectiva se registra cuando se devuelve la copia y es opcional.
-- **R.I.8.4** Comprobar que se identifica al cliente que realiza el alquiler.
-- **R.I.8.5** Comprobar que se identifica la copia física alquilada.
-- **R.I.8.6** Comprobar que un cliente no puede realizar más de 3 alquileres en un mismo mes (R.N.1).
-- **R.I.8.7** Comprobar que la fecha de devolución efectiva es posterior a la fecha de alquiler (R.N.2).
-- **R.I.8.8** Comprobar que una copia con estado "mal" o "no disponible" no puede ser alquilada (R.N.3).
-- **R.I.8.9** Comprobar que el estado del alquiler se calcula (devuelto, vencido o activo) según las fechas (R.N.4).
-- **R.I.8.10** Comprobar que la disponibilidad de una copia se deriva de sus alquileres activos (R.N.5).
+- **R.I.8.4** Comprobar que cada alquiler identifica unívocamente al cliente que realiza la operación.
+- **R.I.8.5** Comprobar que cada alquiler identifica la copia física concreta que ha sido prestada.
+- **R.I.8.6** Comprobar que no se permite registrar un alquiler sin asociar obligatoriamente un cliente y una copia física válidos.
 
 
 ### 4.2. Reglas de negocio
@@ -183,6 +186,13 @@ La disponibilidad de una copia física se deriva de sus alquileres:
 - **R.N.5.2** Comprobar que una copia con un alquiler activo se muestra como "noDisponible".
 - **R.N.5.3** Comprobar que una copia pasa a estar "disponible" después de registrar la devolución de su alquiler activo.
 
+#### R.N.6. Clientes con sanción activa
+Un cliente que tenga una sanción vigente no puede realizar nuevos alquileres mientras dure dicha restricción.
+
+**Pruebas de aceptación**
+- **R.N.6.1** Comprobar que el sistema impide registrar un alquiler a un cliente que tenga el campo de sanción activo.
+- **R.N.6.2** Comprobar que el sistema permite realizar alquileres con normalidad a aquellos clientes que no figuren como sancionados.
+
 
 ### 4.3. Requisitos funcionales
 
@@ -221,7 +231,7 @@ Como gestor, quiero obtener un listado de los clientes que están sancionados, p
 
 **Pruebas de aceptación**
 - **R.F.5.1** Verificar que el sistema muestra únicamente los clientes que tienen una sanción vigente (R.I.2.3), incluyendo sus datos identificativos.
-- **R.F.5.2** Verificar que los clientes sin sanciones vigentes no aparecen en el listado y que un cliente deja de aparecer cuando su sanción deja de estar vigente (R.I.2.3).
+- **R.F.5.2** Verificar que los clientes sin sanciones vigentes no aparecen en el listado y y que a los sancionados se les aplica la restricción de préstamo (R.I.2.3, R.N.6).
 
 #### R.F.6. Listado de alquileres activos
 Como gestor, quiero obtener un listado de los alquileres activos (todavía no devueltos y dentro de plazo), para hacer el seguimiento de las operaciones en curso.
@@ -254,11 +264,11 @@ Como cliente, quiero consultar las sucursales de la biblioteca con su dirección
 - **R.F.9.2** Verificar que, al seleccionar una sucursal, se muestra su información específica y que los datos de las distintas sucursales no se confunden entre sí (R.I.4.5).
 
 #### R.F.10. Listado de libros de una sucursal
-Como gestor, quiero consultar los libros que residen en una sucursal determinada, para conocer el fondo de cada sede.
+Como gestor, quiero consultar los que disponen de ejemplares fisicos en una sucursal determinada, para conocer el fondo de cada sede.
 
 **Pruebas de aceptación**
-- **R.F.10.1** Verificar que el gestor puede seleccionar una sucursal y obtener el listado de libros que residen en ella (R.I.5.8).
-- **R.F.10.2** Verificar que un libro que reside en varias sucursales aparece en el listado de cada una de ellas (R.I.5.8).
+- **R.F.10.1** Verificar que el gestor puede seleccionar una sucursal y obtener el listado de libros que cuentan con copias físicas ubicadas en dicha sede (R.I.5.8, R.I.7.5).
+- **R.F.10.2** Verificar que un libro que tiene copias físicas repartidas en varias sucursales aparece en el listado de cada una de ellas (R.I.5.8).
 
 #### R.F.11. Consultar la información de un libro
 Como cliente, quiero consultar los datos de un libro concreto (título, escritor/es, año, género, editorial e idioma), para decidir si me interesa.
@@ -307,6 +317,8 @@ Como cliente, quiero poder acceder al sistema desde los navegadores web más uti
 | Gestión de alquileres | Consultar alquileres vencidos | Como gestor, quiero consultar los alquileres vencidos para identificar las devoluciones pendientes. | Media |
 | Gestión de alquileres | Validar disponibilidad | Como gestor, quiero que el sistema compruebe la disponibilidad de una copia antes de registrar un alquiler para evitar asignaciones duplicadas. | Alta |
 | Gestión de alquileres | Validar clientes | Como gestor, quiero que el sistema compruebe que un cliente cumple las condiciones antes de registrar un alquiler. | Alta |
+
+-- fin entregable 1 --
 
 ## 5. Modelo conceptual
 ![Diagrama](images/TrabajoIISSI.png)
@@ -398,6 +410,3 @@ Gemini/ChatGPT - Consultas varias sobre Biblioteca (funcionamiento,problemas,etc
 Lucid - Como crear mapa historia de usuario [https://lucid.co/es/blog/como-crear-un-mapa-de-historias-de-usuario]
 
 Github.docs - Escritura y formato en Markdown[https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax]
-
-
-
