@@ -353,7 +353,7 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 - Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
-|       | Entidad Usuario   |  Entidad Gestor  | Asociación (gestiona) | Entidad Sucursal | Asociación se ubica en |  Entidad <Cliente>   |  Asociación alquila  | Entidad Alquiler  | 
+|       | Entidad Usuario | Entidad Gestor | Asociación (gestiona) | Entidad Sucursal | Asociación se ubica en | Entidad Cliente | Asociación alquila | Entidad Alquiler | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | RI-1  |      x     |      x      |            |            |            |            |           |           |                
 | RI-2  |            |     x      |            |           |           |   x        |           |           |           
@@ -376,7 +376,7 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 | RF-11 |           |            |          |           |           |      x     |           |           |          
 
 
-|       | Entidad Copia_Fisica   | Asociación tiene   | Entidad Libro   |  Asociación escribe  | Entidad Escritor   | 
+|       | Entidad Copia_Fisica | Asociación tiene | Entidad Libro | Asociación escribe | Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | RI-1  |      x     |           |           |           |           |           
 | RI-2  |            |           |            |           |           |
