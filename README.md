@@ -355,7 +355,7 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 |       | Entidad Usuario | Entidad Gestor | Asociación gestiona | Entidad Sucursal | Asociación se ubica en | Entidad Cliente | Asociación alquila | Entidad Alquiler | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  |      x     |      x      |            |            |            |            |           |           |                
+| RI-1  |   <p align="center"> x </p>     |      x      |            |            |            |            |           |           |                
 | RI-2  |            |     x      |            |           |           |   x        |           |           |           
 | RI-3  |            |           |            |           |           |           |           |           |          
 | RI-4  |            |      x     |     x       |      x     |           |           |           |           |          
