@@ -353,7 +353,7 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 - Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
-|       | Entidad Usuario   |  Entidad <Gestor>   | Asociación (gestiona) | Entidad <Sucursal> | Entidad <Cliente>   |  Asociación (alquila)  | Entidad <Alquiler>   | 
+|       | Entidad Usuario   |  Entidad Gestor  | Asociación (gestiona) | Entidad Sucursal | Asociación se ubica en |  Entidad <Cliente>   |  Asociación alquila  | Entidad Alquiler  | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | RI-1  |      x     |            |            |            |            |            |           |                
 | RI-2  |            |           |            |           |           |           |           |           
@@ -376,27 +376,27 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 | RF-11 |           |            |          |           |           |           |           |          
 
 
-Entidad <Copia_Fisica>   | Asociación (tiene)   | Asociación (se ubica en)  | Entidad <Libro>   |  Asociación (escribe)  | Entidad <Escritor>   | 
-|:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  |      x     |           |           |           |           |           |           |           |           |           |           |           |           | 
-| RI-2  |            |           |            |           |           |           |           |           |           |           |           |           |           |
-| RI-3  |            |           |            |           |           |           |           |           |           |           |           |           |           |
-| RI-4  |            |           |            |           |           |           |           |           |           |           |           |           |           |
-| RI-5  |            |           |            |           |           |           |           |           |           |           |           |           |           |
-| RI-6  |            |          |            |           |           |           |           |           |           |           |           |           |           |
-| RI-7  |            |           |            |           |           |           |           |           |           |           |           |           |           |
-| RI-8  |            |           |            |           |           |           |           |           |           |           |           |           |           |
-| RF-1  |            |           |            |           |           |           |           |           |           |           |           |           |           |
-| RF-2  |           |            |           |          |           |           |           |           |           |           |           |           |           |
-| RF-3  |           |            |           |           |           |           |           |           |           |           |           |           |           |
-| RF-4  |           |            |           |           |           |           |           |           |           |           |           |           |           |
-| RF-5  |           |            |           |           |           |           |           |           |           |           |           |           |           |
-| RF-6  |           |            |           |           |           |           |           |           |           |           |           |           |           |
-| RF-7  |           |            |           |           |           |           |           |           |           |           |           |           |           |
-| RF-8  |           |            |           |           |           |           |           |           |           |           |           |           |           |
-| RF-9  |           |            |           |           |           |           |           |           |           |           |           |           |           |
-| RF-10 |           |            |           |           |           |           |           |           |           |           |           |           |           |
-| RF-11 |           |            |          |           |           |           |           |           |           |           |           |           |           |
+|       | Entidad Copia_Fisica   | Asociación tiene   | Entidad Libro   |  Asociación escribe  | Entidad Escritor   | 
+|:------|:-----------|:-----------|:-----------|:-----------|:-----------|
+| RI-1  |      x     |           |           |           |           |           
+| RI-2  |            |           |            |           |           |
+| RI-3  |            |           |            |           |           |
+| RI-4  |            |           |            |           |           |
+| RI-5  |            |           |            |           |           |
+| RI-6  |            |          |            |           |           | 
+| RI-7  |            |           |            |           |           |  
+| RI-8  |            |           |            |           |           | 
+| RF-1  |            |           |            |           |           |  
+| RF-2  |           |            |           |          |           |   
+| RF-3  |           |            |           |           |           |    
+| RF-4  |           |            |           |           |           | 
+| RF-5  |           |            |           |           |           |  
+| RF-6  |           |            |           |           |           |  
+| RF-7  |           |            |           |           |           | 
+| RF-8  |           |            |           |           |           |  
+| RF-9  |           |            |           |           |           | 
+| RF-10 |           |            |           |           |           | 
+| RF-11 |           |            |          |           |           | 
 
 -- fin entregable 2 --
 
