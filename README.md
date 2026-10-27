@@ -355,25 +355,25 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 |       | Entidad Usuario   |  Entidad Gestor  | Asociación (gestiona) | Entidad Sucursal | Asociación se ubica en |  Entidad <Cliente>   |  Asociación alquila  | Entidad Alquiler  | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  |      x     |            |            |            |            |            |           |           |                
-| RI-2  |            |           |            |           |           |           |           |           |           
+| RI-1  |      x     |      x      |            |            |            |            |           |           |                
+| RI-2  |            |     x      |            |           |           |   x        |           |           |           
 | RI-3  |            |           |            |           |           |           |           |           |          
-| RI-4  |            |           |            |           |           |           |           |           |          
-| RI-5  |            |           |            |           |           |           |           |           |           
-| RI-6  |            |          |            |           |           |           |           |           |           
-| RI-7  |            |           |            |           |           |           |           |           |          
-| RI-8  |            |           |            |           |           |           |           |           |           
+| RI-4  |            |      x     |     x       |      x     |           |           |           |           |          
+| RI-5  |     x       |           |            |           |           |           |           |           |           
+| RI-6  |      x      |          |            |           |           |           |           |           |           
+| RI-7  |            |     x      |            |           |           |           |           |           |          
+| RI-8  |            |           |      x      |           |           |           |           |           |           
 | RF-1  |            |           |            |           |           |           |           |           |         
-| RF-2  |           |            |           |          |           |           |           |           |           
-| RF-3  |           |            |           |           |           |           |           |           |          
-| RF-4  |           |            |           |           |           |           |           |           |         
-| RF-5  |           |            |           |           |           |           |           |           |          
-| RF-6  |           |            |           |           |           |           |           |           |           
+| RF-2  |           |            |           |          |           |      x     |           |           |           
+| RF-3  |           |           |           |      x     |     x      |           |           |           |          
+| RF-4  |           |      x      |           |           |           |     x      |           |           |         
+| RF-5  |           |       x     |           |           |           |     x      |           |           |          
+| RF-6  |           |      x      |           |           |           |           |     x      |     x      |           
 | RF-7  |           |            |           |           |           |           |           |           |         
-| RF-8  |           |            |           |           |           |           |           |           |          
-| RF-9  |           |            |           |           |           |           |           |           |           
-| RF-10 |           |            |           |           |           |           |           |           |          
-| RF-11 |           |            |          |           |           |           |           |           |          
+| RF-8  |           |            |           |           |           |    x       |           |           |          
+| RF-9  |     x      |            |           |    x       |           |           |           |           |           
+| RF-10 |           |      x      |     x      |     x      |     x      |           |           |           |          
+| RF-11 |           |            |          |           |           |      x     |           |           |          
 
 
 |       | Entidad Copia_Fisica   | Asociación tiene   | Entidad Libro   |  Asociación escribe  | Entidad Escritor   | 
@@ -382,21 +382,21 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 | RI-2  |            |           |            |           |           |
 | RI-3  |            |           |            |           |           |
 | RI-4  |            |           |            |           |           |
-| RI-5  |            |           |            |           |           |
-| RI-6  |            |          |            |           |           | 
-| RI-7  |            |           |            |           |           |  
+| RI-5  |            |           |      x      |           |           |
+| RI-6  |            |          |            |           |     x      | 
+| RI-7  |     x       |           |            |           |           |  
 | RI-8  |            |           |            |           |           | 
-| RF-1  |            |           |            |           |           |  
-| RF-2  |           |            |           |          |           |   
-| RF-3  |           |            |           |           |           |    
+| RF-1  |            |           |      x      |      x     |    x       |  
+| RF-2  |     x      |     x       |    x       |          |           |   
+| RF-3  |      x     |      x      |     x      |           |           |    
 | RF-4  |           |            |           |           |           | 
 | RF-5  |           |            |           |           |           |  
 | RF-6  |           |            |           |           |           |  
-| RF-7  |           |            |           |           |           | 
-| RF-8  |           |            |           |           |           |  
+| RF-7  |     x      |            |           |           |           | 
+| RF-8  |           |            |           |           |       x    |  
 | RF-9  |           |            |           |           |           | 
-| RF-10 |           |            |           |           |           | 
-| RF-11 |           |            |          |           |           | 
+| RF-10 |     x      |      x      |     x      |           |           | 
+| RF-11 |           |            |    x      |           |           | 
 
 -- fin entregable 2 --
 
