@@ -357,7 +357,7 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | RI-1  |   <p align="center"> x </p>     |      x      |            |            |            |            |           |           |                
 | RI-2  |            |     x      |            |           |           |   x        |           |           |           
-| RI-3  |            |           |            |           |           |           |           |           |          
+| RI-3  |       x     |           |            |           |           |           |           |           |          
 | RI-4  |            |      x     |     x       |      x     |           |           |           |           |          
 | RI-5  |     x       |           |            |           |           |           |           |           |           
 | RI-6  |      x      |          |            |           |           |           |           |           |           
