@@ -353,7 +353,7 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 - Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
-|       | Entidad Usuario | Entidad Gestor | Asociación gestiona | Entidad Sucursal | Asociación se ubica en | Entidad Cliente | Asociación alquila | Entidad Alquiler | 
+|       | Entidad Usuario | Entidad Gestor | Asociación gestiona | Entidad Sucursal | Asociación &nbsp; &nbsp; se ubica en | Entidad Cliente | Asociación alquila | Entidad Alquiler | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | RI-1  |   <p align="center"> x </p>     |      x      |            |            |            |            |           |           |                
 | RI-2  |            |     x      |            |           |           |   x        |           |           |           
@@ -372,8 +372,8 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 | RF-7  &nbsp;                 |           |            |           |           |           |           |           |           |         
 | RF-8  &nbsp;                 |           |            |           |           |           |    x       |           |           |          
 | RF-9  &nbsp;                 |     x      |            |           |    x       |           |           |           |           |           
-| RF-10  &nbsp; &nbsp;                |           |      x      |     x      |     x      |     x      |           |           |           |          
-| RF-11  &nbsp; &nbsp;                |           |            |          |           |           |      x     |           |           |          
+| RF-10  &nbsp; &nbsp; &nbsp;               |           |      x      |     x      |     x      |     x      |           |           |           |          
+| RF-11  &nbsp; &nbsp; &nbsp;               |           |            |          |           |           |      x     |           |           |          
 
 
 |       | Entidad Copia_Fisica | Asociación tiene | Entidad Libro | Asociación escribe | Entidad Escritor | 
@@ -386,17 +386,17 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 | RI-6  |            |          |            |           |     x      | 
 | RI-7  |     x       |           |            |           |           |  
 | RI-8  |            |           |            |           |           | 
-| RF-1  |            |           |      x      |      x     |    x       |  
-| RF-2  |     x      |     x       |    x       |          |           |   
-| RF-3  |      x     |      x      |     x      |           |           |    
-| RF-4  |           |            |           |           |           | 
-| RF-5  |           |            |           |           |           |  
-| RF-6  |           |            |           |           |           |  
-| RF-7  |     x      |            |           |           |           | 
-| RF-8  |           |            |           |           |       x    |  
-| RF-9  |           |            |           |           |           | 
-| RF-10 |     x      |      x      |     x      |           |           | 
-| RF-11 |           |            |    x      |           |           | 
+| RF-1 &nbsp; |            |           |      x      |      x     |    x       |  
+| RF-2 &nbsp; |     x      |     x       |    x       |          |           |   
+| RF-3 &nbsp; |      x     |      x      |     x      |           |           |    
+| RF-4 &nbsp; |           |            |           |           |           | 
+| RF-5 &nbsp; |           |            |           |           |           |  
+| RF-6 &nbsp; |           |            |           |           |           |  
+| RF-7 &nbsp; |     x      |            |           |           |           | 
+| RF-8 &nbsp; |           |            |           |           |       x    |  
+| RF-9 &nbsp; |           |            |           |           |           | 
+| RF-10 &nbsp; &nbsp; &nbsp;|     x      |      x      |     x      |           |           | 
+| RF-11 &nbsp; &nbsp; &nbsp; |           |            |    x      |           |           | 
 
 -- fin entregable 2 --
 
