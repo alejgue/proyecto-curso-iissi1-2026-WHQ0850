@@ -328,7 +328,7 @@ Como cliente, quiero poder acceder al sistema desde los navegadores web más uti
 ### 5.2. Escenarios de prueba
 #### 5.2.1. Diagrama de escenario de prueba UML:
 
-![Diagrama](images/UMLPrueba.jpg)
+![Diagrama](images/UMlPrueba.jpg)
 
 #### 5.2.2. Descripción textual:
 Se comprueba el comportamiento del sistema ante operaciones de consulta y préstamo sobre una sede física:
