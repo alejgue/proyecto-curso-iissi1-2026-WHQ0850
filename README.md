@@ -351,9 +351,19 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 ## 6. Matrices de trazabilidad
 
-- Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
+|       | Entidad Usuario | Entidad Gestor | Entidad Sucursal | Entidad Cliente | Entidad Alquiler | Entidad Copia_Fisica | Entidad Libro |  Entidad Escritor | 
+|:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
+| RG-1  |   <p align="center"> x </p>     |      x      |            |            |            |            |           |           |                
+| RG-2  |            |     x      |            |           |           |   x        |           |           |           
+| RG-3  |       x     |           |            |           |           |           |           |           |          
+| RG-4  |            |      x     |     x       |      x     |           |           |           |           |          
+| RG-5  |     x       |           |            |           |      x     |     x      |           |           |           
+| RG-6  |      x      |          |            |           |           |           |           |           |           
+| RG-7  |            |     x      |            |    x       |    x       |           |           |           |          
+| RG-8  |      x      |           |            |           |           |    x       |     x      |      x     |    
 
-|       | Entidad Usuario | Entidad Gestor | Asociación gestiona | Entidad Sucursal | Asociación &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; se ubica en | Entidad Cliente | Asociación alquila | Entidad Alquiler | 
+
+|       | Entidad Usuario | Entidad Gestor | Entidad Sucursal | Entidad Cliente | Entidad Alquiler | Entidad Copia_Fisica | Entidad Libro |  Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | RI-1  |   <p align="center"> x </p>     |      x      |            |            |            |            |           |           |                
 | RI-2  |            |     x      |            |           |           |   x        |           |           |           
@@ -362,41 +372,22 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 | RI-5  |     x       |           |            |           |      x     |     x      |           |           |           
 | RI-6  |      x      |          |            |           |           |           |           |           |           
 | RI-7  |            |     x      |            |    x       |    x       |           |           |           |          
-| RI-8               |      x      |           |            |           |           |    x       |     x      |      x     |           
-| RF-1  &nbsp;        |            |           |            |           |           |     x      |           |           |         
-| RF-2  &nbsp;         |           |            |      x     |     x     |           |      x     |           |           |           
-| RF-3  &nbsp;        |           |      x     |      x     |      x     |     x      |           |           |           |          
-| RF-4  &nbsp;         |           |      x      |           |           |           |     x      |           |           |         
-| RF-5  &nbsp;        |           |       x     |           |           |           |     x      |           |           |          
-| RF-6  &nbsp;         |           |      x      |           |           |           |    x       |     x      |     x      |           
-| RF-7  &nbsp;        |           |     x       |           |           |           |      x     |       x    |     x      |         
-| RF-8  &nbsp;        |           |            |           |           |           |    x       |           |           |          
-| RF-9  &nbsp;       |           |            |           |    x       |           |     x      |           |           |           
-| RF-10  &nbsp; &nbsp; &nbsp;      |           |      x      |     x      |     x      |     x      |           |           |           |          
-| RF-11  &nbsp; &nbsp; &nbsp;      |           |            |          |           |           |      x     |           |           |          
+| RI-8  |      x      |           |            |           |           |    x       |     x      |      x     |           
+     
 
-
-|       | Entidad Copia_Fisica | Asociación tiene | Entidad Libro | Asociación escribe | Entidad Escritor | 
-|:------|:-----------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  |           |           |           |           |           |           
-| RI-2  |            |           |            |           |           |
-| RI-3  |            |           |            |           |           |
-| RI-4  |            |           |            |           |           |
-| RI-5  |      x      |     x      |      x      |     x      |     x      |
-| RI-6  |            |          |       x     |     x      |     x      | 
-| RI-7  |     x       |    x       |     x       |           |           |  
-| RI-8  |      x      |           |            |           |           | 
-| RF-1 &nbsp; |            |           |      x      |      x     |    x       |  
-| RF-2 &nbsp; |     x      |     x       |    x       |          |           |   
-| RF-3 &nbsp; |      x     |      x      |     x      |           |           |    
-| RF-4 &nbsp; |           |            |           |           |           | 
-| RF-5 &nbsp; |           |            |           |           |           |  
-| RF-6 &nbsp; |     x      |      x      |    x       |           |           |  
-| RF-7 &nbsp; |     x      |       x     |    x       |           |           | 
-| RF-8 &nbsp; |           |            |     x      |     x      |       x    |  
-| RF-9 &nbsp; |           |            |           |           |           | 
-| RF-10 &nbsp; &nbsp; &nbsp;|     x      |      x      |     x      |           |           | 
-| RF-11 &nbsp; &nbsp; &nbsp; |           |            |    x      |      x     |      x     | 
+|       | Entidad Usuario | Entidad Gestor | Entidad Sucursal | Entidad Cliente | Entidad Alquiler | Entidad Copia_Fisica | Entidad Libro |  Entidad Escritor | 
+|:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|          
+| RF-1  |            |           |            |           |           |     x      |           |           |         
+| RF-2  |           |            |      x     |     x     |           |      x     |           |           |           
+| RF-3  |           |      x     |      x     |      x     |     x      |           |           |           |          
+| RF-4  |           |      x      |           |           |           |     x      |           |           |         
+| RF-5  |           |       x     |           |           |           |     x      |           |           |          
+| RF-6  |           |      x      |           |           |           |    x       |     x      |     x      |           
+| RF-7  |           |     x       |           |           |           |      x     |       x    |     x      |         
+| RF-8  |           |            |           |           |           |    x       |           |           |          
+| RF-9  |           |            |           |    x       |           |     x      |           |           |           
+| RF-10 |           |      x      |     x      |     x      |     x      |           |           |           |          
+| RF-11 |           |            |          |           |           |      x     |           |           |          
 
 -- fin entregable 2 --
 
