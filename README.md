@@ -368,7 +368,7 @@ El sistema debe utilizar el estándar de codificación UTF-8 en el almacenamient
 ### 5.2. Escenarios de prueba
 #### 5.2.1. Diagrama de escenario de prueba UML:
 
-![Diagrama](images/Pag2.png)
+![Diagrama](images/Pag22.png)
 
 #### 5.2.2. Descripción textual:
 Se comprueba el comportamiento del sistema ante operaciones de consulta y préstamo sobre una sede física:
