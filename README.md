@@ -348,9 +348,9 @@ El sistema debe utilizar el estándar de codificación UTF-8 en el almacenamient
 | **Acceso de usuarios** | Consultar perfil | Como usuario, quiero consultar mis datos personales de contacto para verificar mi información registrada. | Media |
 | **Gestión de clientes** | Administrar socios | Como gestor, quiero dar de alta clientes, controlar su estado de sanción y tramitar bajas para regular su acceso a préstamos (R.N.6, R.N.8). | Alta |
 | **Gestión de gestores** | Administrar personal | Como administrador, quiero gestionar las altas, modificaciones y bajas de los gestores para controlar los permisos de administración. | Media |
-| **Catálogo de libros** | Buscar y filtrar obras | Como cliente, quiero buscar libros por título, escritor o género para encontrar obras de mi interés. | Alta |
-| **Catálogo de libros** | Consultar detalles y autores | Como cliente, quiero consultar la ficha técnica de un libro y la biografía de sus autores para informarme sobre la obra. | Media |
-| **Catálogo de libros** | Catalogar obras y autores | Como gestor, quiero dar de alta libros y autores con sus datos biográficos y fechas válidas para mantener el catálogo al día (R.N.9). | Alta |
+| **Gestion libros** | Buscar y filtrar obras | Como cliente, quiero buscar libros por título, escritor o género para encontrar obras de mi interés. | Alta |
+| **Gestion libros** | Consultar detalles y autores | Como cliente, quiero consultar la ficha técnica de un libro y la biografía de sus autores para informarme sobre la obra. | Media |
+| **Gestion libros** | Catalogar obras y autores | Como gestor, quiero dar de alta libros y autores con sus datos biográficos y fechas válidas para mantener el catálogo al día (R.N.9). | Alta |
 | **Gestión de sucursales**| Consultar sedes y horarios | Como cliente, quiero conocer las ubicaciones, teléfonos y horarios de las sucursales para saber a cuál acudir. | Media |
 | **Gestión de sucursales**| Administrar sedes | Como gestor, quiero registrar sucursales y controlar su capacidad máxima de almacenamiento de ejemplares (R.N.7). | Media |
 | **Copias físicas** | Consultar disponibilidad | Como cliente, quiero comprobar si una copia física está disponible y en qué estantería y sede se encuentra (R.N.5). | Alta |
