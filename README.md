@@ -342,8 +342,6 @@ El sistema debe utilizar el estándar de codificación UTF-8 en el almacenamient
 
 ### 4.5. Mapa de historias de usuario
 
-### 4.5. Mapa de historias de usuario
-
 | Actividad | Tarea | Historia de usuario | Prioridad |
 | :--- | :--- | :--- | :--- |
 | **Acceso de usuarios** | Autenticación y registro | Como usuario, quiero registrarme con una contraseña segura (mínimo 8 caracteres) e iniciar sesión para acceder al sistema (R.N.10). | Alta |
