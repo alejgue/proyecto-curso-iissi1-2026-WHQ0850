@@ -435,17 +435,17 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 - Relaciones obtenidas al aplicar la transformación del modelo conceptual.
 
-* **Usuario**(!idUsuario, nombre, apellido, telefono, direccion, contraseña, fechaRegistro)
-* **Cliente**(!idCliente, @idUsuario, #numeroSocio, sancionado, fechaBaja)
-* **Gestor**(!idGestor, @idUsuario, #numeroEmpleado)
-* **Sucursal**(!idSucursal, #nombreSucursal, direccion, telefono, horarioAtencion, capacidadMaxima, @idGestor)
-* **CopiaFisica**(!codigoBarras, estado, estanteria, @isbn, @idSucursal)
-* **Libro**(!isbn, titulo, añoPublicacion, editorial, idioma)
-* **Escritor**(!idEscritor, nombre, apellido, biografia, fechaNacimiento, fechaMuerte)
-* **LibroEscritor**(!idLibroEscritor, #(@isbn, @idEscritor))
-* **Genero**(!idGenero, #nombre)
-* **LibroGenero**(!idLibroGenero, #(@isbn, @idGenero))
-* **Alquiler**(!idAlquiler, @idCliente, fechaLimiteDevolucion, fechaDevolucionEfectiva, #(@codigoBarras, fechaAlquiler))
+* **Usuario** (!idUsuario, nombre, apellido, telefono, direccion, contraseña, fechaRegistro)
+* **Cliente** (!idCliente, @idUsuario, #numeroSocio, sancionado, fechaBaja)
+* **Gestor** (!idGestor, @idUsuario, #numeroEmpleado)
+* **Sucursal** (!idSucursal, #nombreSucursal, direccion, telefono, horarioAtencion, capacidadMaxima, @idGestor)
+* **CopiaFisica** (!codigoBarras, estado, estanteria, @isbn, @idSucursal)
+* **Libro** (!isbn, titulo, añoPublicacion, editorial, idioma)
+* **Escritor** (!idEscritor, nombre, apellido, biografia, fechaNacimiento, fechaMuerte)
+* **LibroEscritor** (!idLibroEscritor, #(@isbn, @idEscritor))
+* **Genero** (!idGenero, #nombre)
+* **LibroGenero** (!idLibroGenero, #(@isbn, @idGenero))
+* **Alquiler** (!idAlquiler, @idCliente, fechaLimiteDevolucion, fechaDevolucionEfectiva, #(@codigoBarras, fechaAlquiler))
 
 Restricciones en lenguaje natural:
 
