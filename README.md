@@ -435,24 +435,6 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 - Relaciones obtenidas al aplicar la transformación del modelo conceptual.
 
-**Usuario**(!idUsuario, nombre, apellido, telefono, direccion, contraseña, fechaRegistro)
-**Cliente**(!idCliente, @idUsuario, #numeroSocio, sancionado, fechaBaja)
-**Gestor**(!idGestor, @idUsuario, #numeroEmpleado)
-**Sucursal**(!idSucursal, #nombreSucursal, direccion, telefono, horarioAtencion, capacidadMaxima, @idGestor)
-**CopiaFisica**(!codigoBarras, estado, estanteria, @isbn, @idSucursal)
-**Libro**(!isbn, titulo, añoPublicacion, editorial, idioma)
-**Escritor**(!idEscritor, nombre, apellido, biografia, fechaNacimiento, fechaMuerte)
-**LibroEscritor**(!idLibroEscritor, #(@isbn, @idEscritor))
-**Genero**(!idGenero, #nombre)
-**LibroGenero**(!idLibroGenero, #(@isbn, @idGenero))
-**Alquiler**(!idAlquiler, @idCliente, fechaLimiteDevolucion, fechaDevolucionEfectiva, #(@codigoBarras, fechaAlquiler))
-
-### 7.1.  Justificación de la estrategia de transformación de jerarquías
-
-## 7. Modelo relacional en 3FN
-
-El modelo conceptual se ha transformado en el siguiente esquema relacional aplicando las reglas de normalización en 3FN:
-
 * **Usuario**(!idUsuario, nombre, apellido, telefono, direccion, contraseña, fechaRegistro)
 * **Cliente**(!idCliente, @idUsuario, #numeroSocio, sancionado, fechaBaja)
 * **Gestor**(!idGestor, @idUsuario, #numeroEmpleado)
@@ -480,25 +462,26 @@ Restricciones en lenguaje natural:
   * Solo se pueden prestar copias que estén en buen estado ("bien") y que no estén prestadas a otra persona (R.N.3, R.N.5).
   * La fecha de devolución real debe ser posterior al día en que se hizo el alquiler (R.N.2).
 
-### 7.2. Justificación de las decisiones de diseño para 3FN
+
+### 7.1.  Justificación de la estrategia de transformación de jerarquías
 
 #### 1. ¿Cómo pasamos los usuarios a tablas? (Herencia)
-En el diagrama, Usuario se divide en Cliente y Gestor. Decidimos crear **tres tablas separadas** (`Usuario`, `Cliente` y `Gestor`) conectadas por `@idUsuario`. Elegimos esto porque:
-* **No usamos una sola tabla grande:** Si juntáramos todo en `Usuario`, quedarían muchas casillas vacías (`NULL`) porque los clientes no tienen número de empleado y los gestores no tienen número de socio.
-* **No quitamos la tabla `Usuario`:** Si dejáramos solo `Cliente` y `Gestor`, tendríamos que repetir campos como nombre, teléfono y dirección en las dos tablas. Además, no podríamos registrar usuarios nuevos que todavía no tengan un rol asignado.
+En el diagrama, Usuario se divide en Cliente y Gestor. Decidimos crear **tres tablas separadas** (Usuario, Cliente y Gestor) conectadas por @idUsuario. Elegimos esto porque:
+* **No usamos una sola tabla grande:** Si juntáramos todo en Usuario, quedarían muchas casillas vacías (NULL) porque los clientes no tienen número de empleado y los gestores no tienen número de socio.
+* **No quitamos la tabla Usuario:** Si dejáramos solo Cliente y Gestor, tendríamos que repetir campos como nombre, teléfono y dirección en las dos tablas. Además, no podríamos registrar usuarios nuevos que todavía no tengan un rol asignado.
 * **Conclusión:** Tener tres tablas evita repetir datos y no deja campos vacíos innecesarios.
 
 #### 2. ¿Cómo manejamos el estado y los datos calculados?
-* **El estado de la copia (`bien` o `mal`):** Como solo hay dos opciones y no van a cambiar en el futuro, no creamos otra tabla. Se controla con una regla directa en la base de datos (`CHECK (estado IN ('bien', 'mal'))`). Es más rápido y sencillo.
-* **Datos calculados (`/disponibilidad` y `/estadoAlquiler`):** Llevan una barra `/` porque se calculan a partir de las fechas de los alquileres. **No se guardan en las tablas** para no ocupar espacio de más y evitar errores (por ejemplo, que alguien devuelva un libro y la copia siga diciendo "no disponible" por error). Se calculan mediante consultas o vistas (`VIEW`) cuando el sistema los necesita (R.N.4 y R.N.5).
+* **El estado de la copia (bien o mal):** Como solo hay dos opciones y no van a cambiar en el futuro, no creamos otra tabla. Se controla con una regla directa en la base de datos (CHECK (estado IN (bien, mal))). Es más rápido y sencillo.
+* **Datos calculados (/disponibilidad y /estadoAlquiler):** Llevan una barra "/" porque se calculan a partir de las fechas de los alquileres. **No se guardan en las tablas** para no ocupar espacio de más y evitar errores (por ejemplo, que alguien devuelva un libro y la copia siga diciendo "no disponible" por error). Se calculan mediante consultas o vistas (VIEW) cuando el sistema los necesita (R.N.4 y R.N.5).
 
 #### 3. Relaciones de muchos a muchos (Libros con Escritores y Géneros)
-Como un libro puede tener varios autores y un autor puede escribir varios libros, creamos la tabla intermedia `LibroEscritor`. 
-* Le pusimos `#(@isbn, @idEscritor)` como clave única para que el sistema impida asociar por error al mismo escritor dos veces con el mismo libro.
-* Hicimos exactamente lo mismo con `LibroGenero`.
+Como un libro puede tener varios autores y un autor puede escribir varios libros, creamos la tabla intermedia LibroEscritor. 
+* Le pusimos #(@isbn, @idEscritor) como clave única para que el sistema impida asociar por error al mismo escritor dos veces con el mismo libro.
+* Hicimos exactamente lo mismo con LibroGenero.
 
 #### 4. La tabla Alquiler
-Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por eso, `Alquiler` es una tabla propia con su propio ID y una regla `#(@codigoBarras, fechaAlquiler)`. Esto asegura que nadie pueda prestar el mismo libro dos veces en el mismo momento, pero permite que un cliente vuelva a leerlo meses después.
+Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por eso, Alquiler es una tabla propia con su propio ID y una regla #(@codigoBarras, fechaAlquiler). Esto asegura que nadie pueda prestar el mismo libro dos veces en el mismo momento, pero permite que un cliente vuelva a leerlo meses después.
 
 
 
