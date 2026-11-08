@@ -51,6 +51,7 @@ En definitiva, el proyecto pretende proporcionar una solución que permita a la 
   - **R.G.5. Gestión de libros**: El sistema permitirá catalogar los títulos bibliográficos clasificándolos por escritores y géneros literarios.
   - **R.G.6. Gestión de copias físicas**: El sistema permitirá inventariar cada ejemplar físico, controlando su localización en estantería y su estado de conservación.
   - **R.G.7. Gestión de sucursales**: El sistema permitirá administrar las diferentes sedes físicas de la biblioteca, sus datos de contacto y sus límites de capacidad.
+  - **R.G.8. Gestión de escritores**: El sistema permitirá administrar el censo de autores y creadores literarios, registrando sus datos biográficos e históricos para documentar la autoría del catálogo de libros.
 
     
 ### 3.2. Usuarios del sistema 
@@ -63,7 +64,7 @@ En definitiva, el proyecto pretende proporcionar una solución que permita a la 
 ### 4.1. Requisitos de información
 
 #### R.I.1. Información de usuarios
-Como gestor del sistema, quiero registrar y consultar la información de los usuarios para mantener sus datos identificativos y de contacto (nombre, apellidos, teléfono, dirección y fecha de registro).
+Como gestor del sistema, quiero registrar y consultar la información de los usuarios para mantener sus datos identificativos y de contacto (nombre, apellidos, teléfono, dirección, contraseña y fecha de registro).
 
 #### R.I.2. Información de clientes
 Como gestor del sistema, quiero registrar y consultar los datos específicos de los clientes para gestionar su condición de socios en la biblioteca (número de socio, estado de sanción y fecha de baja).
@@ -82,6 +83,9 @@ Como gestor del sistema, quiero registrar y consultar la información de los eje
 
 #### R.I.7. Información de sucursales
 Como gestor del sistema, quiero registrar y consultar la información de las sucursales para conocer sus datos de contacto, horarios y límites de inventario (nombre de la sucursal, dirección, teléfono, horario de atención y capacidad máxima de ejemplares).
+
+#### R.I.8. Información de escritores
+Como gestor del sistema, quiero registrar y consultar la información de los autores para identificar a los creadores de las obras y enriquecer el catálogo bibliográfico (nombre, apellidos, biografía, fecha de nacimiento y fecha de defunción).
 
 ### 4.2. Reglas de negocio
 
@@ -114,6 +118,12 @@ Restricción de inventario físico que impide asignar más copias físicas en un
 #### R.N.8. Validación de fecha de baja
 Restricción temporal que impide registrar fechas de baja futuras en el expediente del cliente; la baja debe ser efectiva en el día de hoy o haber ocurrido en el pasado.
 
+#### R.N.9. Validación de fechas de defunción de autores
+En caso de registrarse la fecha de defunción de un escritor, esta debe ser estrictamente posterior a su fecha de nacimiento y no puede ser una fecha futura (fechaMuerte > fechaNacimiento y fechaMuerte <= hoy).
+
+#### R.N.10. Validación de contraseña
+La contraseña debe tener al menos 8 caracteres (length(contraseña) >= 8).
+
 ### 4.3. Requisitos funcionales
 
 #### **R.F.1 Usuarios**
@@ -133,12 +143,14 @@ Como usuario, quiero autenticarme en el sistema con mis credenciales para accede
 Como usuario, quiero recuperar el acceso a mi cuenta para operar si olvido mi clave.
 **Pruebas de aceptación**:
   - R.F.1.3.1 Comprobar que el sistema genera un mecanismo de cambio de contraseña ante una petición válida.
+  - R.F.1.3.2 Comprobar que la nueva contraseña establecida cumpla con la longitud mínima de 8 caracteres (R.N.10).
 
 ##### **R.F.1.4. Registro de usuario**
 Como usuario, quiero darme de alta en el sistema para disponer de cuenta en la biblioteca.
 **Pruebas de aceptación**:
   - R.F.1.4.1 Comprobar que el sistema exige y almacena los datos de contacto (teléfono y dirección) del usuario (R.I.1).
   - R.F.1.4.2 Comprobar que el sistema almacena la fecha de registro en el momento del alta (R.I.1).
+  - R.F.1.4.3 Comprobar que el sistema deniega el registro si la contraseña introducida tiene menos de 8 caracteres (R.N.10).
 
 #### **R.F.2 Clientes**
 
@@ -276,6 +288,31 @@ Como gestor, quiero comprobar el volumen de ejemplares en depósito frente al l�
 **Pruebas de aceptación**:
   - R.F.7.4.1 Comprobar que se muestra el total de copias físicas y el porcentaje respecto a la capacidad máxima
 
+#### **R.F.8 Escritores**
+
+##### **R.F.8.1. Listado de escritores**
+Como usuario, quiero examinar la lista completa de autores registrados para conocer los creadores disponibles en el fondo bibliográfico.
+**Pruebas de aceptación**:
+  - R.F.8.1.1 Comprobar que el listado muestra el nombre completo y los apellidos de cada escritor registrado.
+
+##### **R.F.8.2. Consulta de detalle de un escritor**
+Como usuario, quiero consultar la ficha técnica y biográfica de un autor seleccionado para conocer su trayectoria y sus obras disponibles.
+**Pruebas de aceptación**:
+  - R.F.8.2.1 Comprobar que se muestran la biografía, la fecha de nacimiento y la fecha de defunción (si aplica) del autor (R.I.8).
+  - R.F.8.2.2 Comprobar que el sistema lista todos los libros del catálogo que han sido escritos por dicho autor.
+
+##### **R.F.8.3. Alta de escritor**
+Como gestor, quiero registrar a un nuevo autor en el sistema para poder vincularlo posteriormente a los libros del catálogo.
+**Pruebas de aceptación**:
+  - R.F.8.3.1 Comprobar que el sistema exige y almacena obligatoriamente nombre, apellidos, biografía y fecha de nacimiento (R.I.8).
+  - R.F.8.3.2 Comprobar que, si se introduce fecha de defunción, el sistema valida que no sea anterior al nacimiento ni sea una fecha futura (R.N.9).
+
+##### **R.F.8.4. Modificación de datos de escritor**
+Como gestor, quiero actualizar la información biográfica o asentar la fecha de fallecimiento de un autor para mantener su expediente al día.
+**Pruebas de aceptación**:
+  - R.F.8.4.1 Comprobar que se guardan correctamente los cambios sobre la biografía del escritor.
+  - R.F.8.4.2 Comprobar que, en caso de actualizar la fecha de defunción, esta cumple con la regla de coherencia temporal (R.N.9).
+
 
 ### 4.4. Requisitos no funcionales
 
@@ -300,28 +337,28 @@ El cálculo de disponibilidad de una copia física debe ser estrictamente transa
 #### R.N.F.7. Disponibilidad de servicio por sucursales
 El sistema debe garantizar una disponibilidad ininterrumpida de al menos el 99,5% durante los horarios de atención de las sucursales.
 
+#### R.N.F.8. Soporte internacional y codificación de autores
+El sistema debe utilizar el estándar de codificación UTF-8 en el almacenamiento y procesamiento de los nombres, apellidos y textos biográficos de los escritores, garantizando la correcta visualización de caracteres especiales, tildes y grafías internacionales.
+
+### 4.5. Mapa de historias de usuario
+
 ### 4.5. Mapa de historias de usuario
 
 | Actividad | Tarea | Historia de usuario | Prioridad |
-|-----------|-------|---------------------|-----------|
-| Catálogo de libros | Buscar libros | Como cliente, quiero buscar libros por título para localizar las obras que me interesan. | Alta |
-| Catálogo de libros | Consultar disponibilidad | Como cliente, quiero conocer qué ejemplares están disponibles y en qué sucursal. | Alta |
-| Catálogo de libros | Registrar libros | Como gestor, quiero registrar libros y creadores para mantener actualizado el catálogo. | Alta |
-| Catálogo de libros | Registrar copias físicas | Como gestor, quiero registrar copias físicas y asignarlas a sucursales. | Alta |
-| Catálogo de libros | Consultar información | Como cliente, quiero consultar la información detallada de un libro para decidir si me interesa. | Media |
-| Catálogo de libros | Filtrar resultados | Como cliente, quiero filtrar los libros por escritor, género, editorial e idioma para encontrar obras de mi interés. | Media |
-| Gestión de sucursales | Consultar sucursales | Como cliente, quiero consultar las direcciones, teléfonos y horarios de las sucursales para saber dónde acudir. | Media |
-| Gestión de sucursales | Consultar copias físicas | Como gestor, quiero consultar las copias físicas por libro o sucursal, incluyendo su estado y estantería, para localizar los ejemplares. | Alta |
-| Gestión de clientes | Registrar clientes | Como gestor, quiero registrar nuevos clientes para permitirles utilizar los servicios de la biblioteca. | Alta |
-| Gestión de clientes | Gestionar sanciones | Como gestor, quiero registrar y actualizar sanciones para controlar las restricciones aplicadas a los clientes. | Media |
-| Gestión de alquileres | Consultar alquileres propios | Como cliente, quiero consultar mis alquileres activos y las fechas previstas de devolución. | Alta |
-| Gestión de alquileres | Registrar alquileres | Como gestor, quiero registrar alquileres para saber qué ejemplares tiene cada cliente. | Alta |
-| Gestión de alquileres | Registrar devoluciones | Como gestor, quiero registrar devoluciones para actualizar la disponibilidad de los ejemplares. | Alta |
-| Gestión de alquileres | Consultar historial | Como gestor, quiero consultar el historial de alquileres para revisar las operaciones realizadas. | Media |
-| Gestión de alquileres | Consultar alquileres activos | Como gestor, quiero consultar los alquileres activos para realizar el seguimiento de los ejemplares alquilados. | Alta |
-| Gestión de alquileres | Consultar alquileres vencidos | Como gestor, quiero consultar los alquileres vencidos para identificar las devoluciones pendientes. | Media |
-| Gestión de alquileres | Validar disponibilidad | Como gestor, quiero que el sistema compruebe la disponibilidad de una copia antes de registrar un alquiler para evitar asignaciones duplicadas. | Alta |
-| Gestión de alquileres | Validar clientes | Como gestor, quiero que el sistema compruebe que un cliente cumple las condiciones antes de registrar un alquiler. | Alta |
+| :--- | :--- | :--- | :--- |
+| **Acceso de usuarios** | Autenticación y registro | Como usuario, quiero registrarme con una contraseña segura (mínimo 8 caracteres) e iniciar sesión para acceder al sistema (R.N.10). | Alta |
+| **Acceso de usuarios** | Consultar perfil | Como usuario, quiero consultar mis datos personales de contacto para verificar mi información registrada. | Media |
+| **Gestión de clientes** | Administrar socios | Como gestor, quiero dar de alta clientes, controlar su estado de sanción y tramitar bajas para regular su acceso a préstamos (R.N.6, R.N.8). | Alta |
+| **Gestión de gestores** | Administrar personal | Como administrador, quiero gestionar las altas, modificaciones y bajas de los gestores para controlar los permisos de administración. | Media |
+| **Catálogo de libros** | Buscar y filtrar obras | Como cliente, quiero buscar libros por título, escritor o género para encontrar obras de mi interés. | Alta |
+| **Catálogo de libros** | Consultar detalles y autores | Como cliente, quiero consultar la ficha técnica de un libro y la biografía de sus autores para informarme sobre la obra. | Media |
+| **Catálogo de libros** | Catalogar obras y autores | Como gestor, quiero dar de alta libros y autores con sus datos biográficos y fechas válidas para mantener el catálogo al día (R.N.9). | Alta |
+| **Gestión de sucursales**| Consultar sedes y horarios | Como cliente, quiero conocer las ubicaciones, teléfonos y horarios de las sucursales para saber a cuál acudir. | Media |
+| **Gestión de sucursales**| Administrar sedes | Como gestor, quiero registrar sucursales y controlar su capacidad máxima de almacenamiento de ejemplares (R.N.7). | Media |
+| **Copias físicas** | Consultar disponibilidad | Como cliente, quiero comprobar si una copia física está disponible y en qué estantería y sede se encuentra (R.N.5). | Alta |
+| **Copias físicas** | Inventariar y mantener copias | Como gestor, quiero registrar copias físicas y actualizar su estado físico (bien/mal) para retirar ejemplares deteriorados (R.N.3). | Alta |
+| **Gestión de alquileres**| Tramitar préstamos y devoluciones | Como gestor, quiero registrar préstamos y devoluciones validando cupos, sanciones y el estado de la copia (R.N.1, R.N.2, R.N.3). | Alta |
+| **Gestión de alquileres**| Supervisar alquileres | Como gestor, quiero consultar los alquileres activos y vencidos para reclamar los ejemplares fuera de plazo (R.N.4). | Alta |
 
 
 ## 5. Modelo conceptual
