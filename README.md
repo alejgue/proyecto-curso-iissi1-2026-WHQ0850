@@ -391,22 +391,22 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 
 ## 6. Matrices de trazabilidad
 
-|       | Entidad Usuario | Entidad Gestor | Entidad Sucursal | Entidad Cliente | Entidad Alquiler | Entidad Copia_Fisica | Entidad Libro |  Entidad Escritor | 
+|       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
-| RG-1  |   <p align="center"> x </p>     |      x      |            |            |            |            |           |           |                
-| RG-2  |            |     x      |            |           |           |   x        |           |           |           
-| RG-3  |       x     |           |            |           |           |           |           |           |          
-| RG-4  |            |      x     |     x       |      x     |           |           |           |           |          
-| RG-5  |     x       |           |            |           |      x     |     x      |           |           |           
-| RG-6  |      x      |          |            |           |           |           |           |           |           
-| RG-7  |            |     x      |            |    x       |    x       |           |           |           |          
-| RG-8  |      x      |           |            |           |           |    x       |     x      |      x     |    
+| RG-1  |   <p align="center"> x </p>     |            |            |            |            |            |           |           |                
+| RG-2  |            |     <p align="center"> x </p>      |            |           |           |           |           |           |           
+| RG-3  |            |           |      <p align="center"> x </p>      |           |           |           |           |           |          
+| RG-4  |            |           |            |      <p align="center"> x </p>     |           |           |           |           |          
+| RG-5  |            |           |            |           |      <p align="center"> x </p>     |           |           |           |           
+| RG-6  |            |          |            |           |           |     <p align="center"> x </p>      |           |           |           
+| RG-7  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |          
+| RG-8  |            |           |            |           |           |           |           |      <p align="center"> x </p>     |    
 
 
-|       | Entidad Usuario | Entidad Gestor | Entidad Sucursal | Entidad Cliente | Entidad Alquiler | Entidad Copia_Fisica | Entidad Libro |  Entidad Escritor | 
+|       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  |   <p align="center"> x </p>     |      x      |            |            |            |            |           |           |                
-| RI-2  |            |     x      |            |           |           |   x        |           |           |           
+| RI-1  |   <p align="center"> x </p>     |            |            |            |            |            |           |           |                
+| RI-2  |            |           |            |           |           |   x        |           |           |           
 | RI-3  |       x     |           |            |           |           |           |           |           |          
 | RI-4  |            |      x     |     x       |      x     |           |           |           |           |          
 | RI-5  |     x       |           |            |           |      x     |     x      |           |           |           
@@ -415,7 +415,7 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 | RI-8  |      x      |           |            |           |           |    x       |     x      |      x     |           
      
 
-|       | Entidad Usuario | Entidad Gestor | Entidad Sucursal | Entidad Cliente | Entidad Alquiler | Entidad Copia_Fisica | Entidad Libro |  Entidad Escritor | 
+|       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|          
 | RF-1  |            |           |            |           |           |     x      |           |           |         
 | RF-2  |           |            |      x     |     x     |           |      x     |           |           |           
