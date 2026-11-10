@@ -136,18 +136,21 @@ Como usuario, quiero ver mis datos personales registrados para verificar mi info
 
 ##### **R.F.1.2. Inicio de sesión**
 Como usuario, quiero autenticarme en el sistema con mis credenciales para acceder a mis funcionalidades.
+
 **Pruebas de aceptación**:
   - R.F.1.2.1 Comprobar que se permite el acceso al introducir credenciales válidas.
   - R.F.1.2.2 Comprobar que se deniega el acceso al introducir credenciales erróneas.
 
 ##### **R.F.1.3. Restablecimiento de contraseña**
 Como usuario, quiero recuperar el acceso a mi cuenta para operar si olvido mi clave.
+
 **Pruebas de aceptación**:
   - R.F.1.3.1 Comprobar que el sistema genera un mecanismo de cambio de contraseña ante una petición válida.
   - R.F.1.3.2 Comprobar que la nueva contraseña establecida cumpla con la longitud mínima de 8 caracteres (R.N.10).
 
 ##### **R.F.1.4. Registro de usuario**
 Como usuario, quiero darme de alta en el sistema para disponer de cuenta en la biblioteca.
+
 **Pruebas de aceptación**:
   - R.F.1.4.1 Comprobar que el sistema exige y almacena los datos de contacto (teléfono y dirección) del usuario (R.I.1).
   - R.F.1.4.2 Comprobar que el sistema almacena la fecha de registro en el momento del alta (R.I.1).
@@ -157,21 +160,25 @@ Como usuario, quiero darme de alta en el sistema para disponer de cuenta en la b
 
 ##### **R.F.2.1. Listado de clientes**
 Como gestor, quiero obtener la lista completa de socios para consultar su información base.
+
 **Pruebas de aceptación**:
   - R.F.2.1.1 Comprobar que el listado muestra el número de socio, nombre y teléfono de cada cliente.
 
 ##### **R.F.2.2. Creación de cliente**
 Como gestor, quiero registrar a un nuevo socio asignándole su número identificativo.
+
 **Pruebas de aceptación**:
   - R.F.2.2.1 Comprobar que no se permite crear un cliente con un número de socio ya existente.
 
 ##### **R.F.2.3. Consulta de condición de cliente**
 Como gestor, quiero comprobar el estado de sanción de un socio para autorizar operaciones.
+
 **Pruebas de aceptación**:
   - R.F.2.3.1 Comprobar que el sistema indica claramente si el cliente figura como sancionado (R.N.6).
 
 ##### **R.F.2.4. Borrado de cliente**
 Como gestor, quiero registrar la baja de un socio para finalizar su vinculación con el centro.
+
 **Pruebas de aceptación**:
   - R.F.2.4.1 Comprobar que se registra la fecha de baja asegurando que no sea una fecha futura (R.N.8).
 
@@ -179,21 +186,25 @@ Como gestor, quiero registrar la baja de un socio para finalizar su vinculación
 
 ##### **R.F.3.1. Listado de gestores**
 Como administrador, quiero consultar la plantilla de gestores para conocer el personal activo.
+
 **Pruebas de aceptación**:
   - R.F.3.1.1 Comprobar que se muestran los números de empleado y datos identificativos de los gestores.
 
 ##### **R.F.3.2. Creación de gestor**
 Como administrador, quiero dar de alta a un gestor asignándole su número laboral.
+
 **Pruebas de aceptación**:
   - R.F.3.2.1 Comprobar que se registra un gestor asociándolo a un usuario base válido.
 
 ##### **R.F.3.3. Modificación de gestor**
 Como administrador, quiero actualizar los datos laborales de un gestor para reflejar cambios.
+
 **Pruebas de aceptación**:
   - R.F.3.3.1 Comprobar que se guardan correctamente los cambios en los datos del gestor.
 
 ##### **R.F.3.4. Borrado de gestor**
 Como administrador, quiero retirar los privilegios a un gestor que finaliza su relación laboral.
+
 **Pruebas de aceptación**:
   - R.F.3.4.1 Comprobar que el gestor dado de baja pierde sus permisos de administración.
 
@@ -201,16 +212,19 @@ Como administrador, quiero retirar los privilegios a un gestor que finaliza su r
 
 ##### **R.F.4.1. Listado de alquileres activos**
 Como gestor, quiero ver los préstamos en curso para conocer qué libros están fuera.
+
 **Pruebas de aceptación**:
   - R.F.4.1.1 Comprobar que solo se listan alquileres cuyo estado calculado sea "activo" (R.N.4).
 
 ##### **R.F.4.2. Listado de alquileres vencidos**
 Como gestor, quiero listar los préstamos no devueltos fuera de plazo para reclamarlos.
+
 **Pruebas de aceptación**:
   - R.F.4.2.1 Comprobar que aparecen los alquileres cuyo estado calculado sea "vencido" (R.N.4).
 
 ##### **R.F.4.3. Registro de préstamo**
 Como gestor, quiero formalizar un alquiler asignando una copia física a un socio.
+
 **Pruebas de aceptación**:
   - R.F.4.3.1 Comprobar que el sistema deniega el alquiler si el socio supera los 3 préstamos al mes (R.N.1).
   - R.F.4.3.2 Comprobar que el sistema deniega el alquiler si el socio está sancionado (R.N.6).
@@ -218,6 +232,7 @@ Como gestor, quiero formalizar un alquiler asignando una copia física a un soci
 
 ##### **R.F.4.4. Registro de devolución**
 Como gestor, quiero registrar la entrega de un ejemplar anotando la fecha efectiva.
+
 **Pruebas de aceptación**:
   - R.F.4.4.1 Comprobar que la fecha de devolución efectiva no puede ser anterior a la de alquiler (R.N.2).
   - R.F.4.4.2 Comprobar que, tras la devolución, el estado del alquiler pasa a "devuelto" (R.N.4).
@@ -226,11 +241,13 @@ Como gestor, quiero registrar la entrega de un ejemplar anotando la fecha efecti
 
 ##### **R.F.5.1. Listado del catálogo de libros**
 Como usuario, quiero examinar los títulos del catálogo para conocer la oferta bibliográfica.
+
 **Pruebas de aceptación**:
   - R.F.5.1.1 Comprobar que el listado muestra título, ISBN, editorial, año e idioma de cada obra.
 
 ##### **R.F.5.2. Filtrado de libros**
 Como usuario, quiero buscar libros por género literario o escritor para acotar resultados.
+
 **Pruebas de aceptación**:
   - R.F.5.2.1 Comprobar que la búsqueda devuelve únicamente las obras coincidentes con el criterio.
 
@@ -249,21 +266,25 @@ Como gestor, quiero añadir una nueva obra asegurando su correcta catalogación.
 
 ##### **R.F.6.1. Listado de copias por libro**
 Como gestor, quiero conocer todas las copias físicas correspondientes a un libro concreto.
+
 **Pruebas de aceptación**:
   - R.F.6.1.1 Comprobar que se listan todos los ejemplares asociados al ISBN seleccionado.
 
 ##### **R.F.6.2. Consulta de disponibilidad de ejemplar**
 Como cliente, quiero comprobar si una copia física concreta está disponible para préstamo.
+
 **Pruebas de aceptación**:
   - R.F.6.2.1 Comprobar que el estado de disponibilidad mostrado coincide con la regla de negocio (R.N.5).
 
 ##### **R.F.6.3. Registro de nueva copia física**
 Como gestor, quiero dar de alta un nuevo ejemplar asignándole código de barras y estantería.
+
 **Pruebas de aceptación**:
   - R.F.6.3.1 Comprobar que el sistema deniega el alta si la sucursal ha alcanzado su capacidad máxima (R.N.7).
 
 ##### **R.F.6.4. Modificación de estado físico de copia**
 Como gestor, quiero actualizar la condición física de un ejemplar a "bien" o "mal".
+
 **Pruebas de aceptación**:
   - R.F.6.4.1 Comprobar que, si una copia se marca como "mal", el sistema impide nuevos alquileres (R.N.3).
 
@@ -271,21 +292,25 @@ Como gestor, quiero actualizar la condición física de un ejemplar a "bien" o "
 
 ##### **R.F.7.1. Listado de sucursales**
 Como usuario, quiero ver la relación de sedes físicas existentes para saber dónde acudir.
+
 **Pruebas de aceptación**:
   - R.F.7.1.1 Comprobar que se muestran el nombre, dirección y teléfono de cada sede.
     
 ##### **R.F.7.2. Consulta de horario de sucursal**
 Como cliente, quiero conocer el horario de apertura de una sede seleccionada.
+
 **Pruebas de aceptación**:
   - R.F.7.2.1 Comprobar que se visualizan los días y horas de atención al público de la sede elegida.
 
 ##### **R.F.7.3. Alta de sucursal**
 Como gestor, quiero registrar una nueva sede estableciendo su límite de almacenamiento.
+
 **Pruebas de aceptación**:
   - R.F.7.3.1 Comprobar que se registra obligatoriamente el atributo de capacidad máxima (R.N.7).
 
 ##### **R.F.7.4. Consulta de ocupación de sucursal**
 Como gestor, quiero comprobar el volumen de ejemplares en depósito frente al límite de la sede.
+
 **Pruebas de aceptación**:
   - R.F.7.4.1 Comprobar que se muestra el total de copias físicas y el porcentaje respecto a la capacidad máxima
 
@@ -293,23 +318,27 @@ Como gestor, quiero comprobar el volumen de ejemplares en depósito frente al l�
 
 ##### **R.F.8.1. Listado de escritores**
 Como usuario, quiero examinar la lista completa de autores registrados para conocer los creadores disponibles en el fondo bibliográfico.
+
 **Pruebas de aceptación**:
   - R.F.8.1.1 Comprobar que el listado muestra el nombre completo y los apellidos de cada escritor registrado.
 
 ##### **R.F.8.2. Consulta de detalle de un escritor**
 Como usuario, quiero consultar la ficha técnica y biográfica de un autor seleccionado para conocer su trayectoria y sus obras disponibles.
+
 **Pruebas de aceptación**:
   - R.F.8.2.1 Comprobar que se muestran la biografía, la fecha de nacimiento y la fecha de defunción (si aplica) del autor (R.I.8).
   - R.F.8.2.2 Comprobar que el sistema lista todos los libros del catálogo que han sido escritos por dicho autor.
 
 ##### **R.F.8.3. Alta de escritor**
 Como gestor, quiero registrar a un nuevo autor en el sistema para poder vincularlo posteriormente a los libros del catálogo.
+
 **Pruebas de aceptación**:
   - R.F.8.3.1 Comprobar que el sistema exige y almacena obligatoriamente nombre, apellidos, biografía y fecha de nacimiento (R.I.8).
   - R.F.8.3.2 Comprobar que, si se introduce fecha de defunción, el sistema valida que no sea anterior al nacimiento ni sea una fecha futura (R.N.9).
 
 ##### **R.F.8.4. Modificación de datos de escritor**
 Como gestor, quiero actualizar la información biográfica o asentar la fecha de fallecimiento de un autor para mantener su expediente al día.
+
 **Pruebas de aceptación**:
   - R.F.8.4.1 Comprobar que se guardan correctamente los cambios sobre la biografía del escritor.
   - R.F.8.4.2 Comprobar que, en caso de actualizar la fecha de defunción, esta cumple con la regla de coherencia temporal (R.N.9).
