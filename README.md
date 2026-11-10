@@ -511,10 +511,11 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 
 - Restricciones sobre el MC / Elementos del modelo tecnológico (SQL) (Triggers, checks, etc.)
 - Incluir Reglas de negocio — Constraints/Triggers en las matrices de trazabilidad para el entregable 3
+- Entidad asociacion (tablas intermedias N a N) (tambien puede ser la asociacion en si), comentarios UML/reglas de negocio 3 trigger;
 
 |       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|          
-| RF-1.1  |     <p align="center"> x </p>       |           |            |           |           |           |           |           |         
+| Tabla Entidad  |     <p align="center"> x </p>       |           |            |           |           |           |           |           |         
 | RF-1.2  |     <p align="center"> x </p>      |            |           |          |           |           |           |           |           
 | RF-1.3  |     <p align="center"> x </p>      |           |           |           |           |           |           |           |          
 | RF-1.4  |     <p align="center"> x </p>      |            |           |           |           |           |           |           |         
@@ -548,7 +549,22 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 | RF-8.4  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
 
 
-|       | EntidadX   | Entidad AsociaciónX  | Reglas negocio | Entidad2 ...   | 
+|       | Entidad     | Entidad AsociaciónX  | Reglas negocio | Entidad2 ...   | 
+|:-------|:-------|:-------|:-------|:-------|
+| TABLA-1 |        |        |        |        |
+| TABLA-2 |        |        |        |        |
+| TABLA-3 |        |        |        |        |
+| TABLA-4 |        |        |        |        |
+| TRIG-1 |        |        |        |        |
+| TRIG-2 | X      | X      |        | X      |
+| TRIG-3 |        | X      |        | X      |
+| TRIG-4 |        |        | X      |        |
+| CONST-1 |        |        |        |        |
+| CONST-2 | X      | X      |        | X      |
+| CONST-3 |        | X      |        | X      |
+| CONST-4 |        |        | X      |        |
+
+|       | RN-1   | RN-2  | RN-1   | RN-1   | RN-1   |
 |:-------|:-------|:-------|:-------|:-------|
 | TABLA-1 |        |        |        |        |
 | TABLA-2 |        |        |        |        |
