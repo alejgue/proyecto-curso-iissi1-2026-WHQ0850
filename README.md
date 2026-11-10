@@ -406,28 +406,49 @@ Se comprueba el comportamiento del sistema ante operaciones de consulta y prést
 |       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
 | RI-1  |   <p align="center"> x </p>     |            |            |            |            |            |           |           |                
-| RI-2  |            |           |            |           |           |   x        |           |           |           
-| RI-3  |       x     |           |            |           |           |           |           |           |          
-| RI-4  |            |      x     |     x       |      x     |           |           |           |           |          
-| RI-5  |     x       |           |            |           |      x     |     x      |           |           |           
-| RI-6  |      x      |          |            |           |           |           |           |           |           
-| RI-7  |            |     x      |            |    x       |    x       |           |           |           |          
-| RI-8  |      x      |           |            |           |           |    x       |     x      |      x     |           
+| RI-2  |            |     <p align="center"> x </p>      |            |           |           |           |           |           |           
+| RI-3  |            |           |       <p align="center"> x </p>     |           |           |           |           |           |          
+| RI-4  |            |           |            |      <p align="center"> x </p>     |           |           |           |           |          
+| RI-5  |            |           |            |           |      <p align="center"> x </p>     |           |           |           |           
+| RI-6  |            |          |            |           |           |     <p align="center"> x </p>      |           |           |           
+| RI-7  |            |           |            |           |           |           |      <p align="center"> x </p>     |           |          
+| RI-8  |            |           |            |           |           |           |           |      <p align="center"> x </p>     |           
      
 
 |       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|          
-| RF-1  |            |           |            |           |           |     x      |           |           |         
-| RF-2  |           |            |      x     |     x     |           |      x     |           |           |           
-| RF-3  |           |      x     |      x     |      x     |     x      |           |           |           |          
-| RF-4  |           |      x      |           |           |           |     x      |           |           |         
-| RF-5  |           |       x     |           |           |           |     x      |           |           |          
-| RF-6  |           |      x      |           |           |           |    x       |     x      |     x      |           
-| RF-7  |           |     x       |           |           |           |      x     |       x    |     x      |         
-| RF-8  |           |            |           |           |           |    x       |           |           |          
-| RF-9  |           |            |           |    x       |           |     x      |           |           |           
-| RF-10 |           |      x      |     x      |     x      |     x      |           |           |           |          
-| RF-11 |           |            |          |           |           |      x     |           |           |          
+| RF-1.1  |     <p align="center"> x </p>       |           |            |           |           |           |           |           |         
+| RF-1.2  |     <p align="center"> x </p>      |            |           |          |           |           |           |           |           
+| RF-1.3  |     <p align="center"> x </p>      |           |           |           |           |           |           |           |          
+| RF-1.4  |     <p align="center"> x </p>      |            |           |           |           |           |           |           |         
+| RF-2.1  |           |     <p align="center"> x </p>       |           |           |           |           |           |           |          
+| RF-2.2  |           |     <p align="center"> x </p>       |           |           |           |           |           |           |           
+| RF-2.3  |           |      <p align="center"> x </p>      |           |           |           |           |           |           |         
+| RF-2.4  |           |      <p align="center"> x </p>      |           |           |           |           |           |           |          
+| RF-3.1  |           |            |      <p align="center"> x </p>     |           |           |           |           |           |           
+| RF-3.2 |           |            |     <p align="center"> x </p>      |           |           |           |           |           |          
+| RF-3.3 |           |            |     <p align="center"> x </p>     |           |           |           |           |           |          
+| RF-3.4  |            |           |       <p align="center"> x </p>     |           |           |           |           |           |
+| RF-4.1  |            |           |            |     <p align="center"> x </p>      |           |           |           |           |
+| RF-4.2  |            |           |            |     <p align="center"> x </p>      |           |           |           |           |
+| RF-4.3  |            |           |            |      <p align="center"> x </p>     |           |           |           |           |
+| RF-4.4  |            |           |            |      <p align="center"> x </p>     |           |           |           |           |
+| RF-5.1  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
+| RF-5.2  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
+| RF-5.3  |            |           |            |           |      <p align="center"> x </p>     |           |           |           |
+| RF-5.4  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
+| RF-6.1  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
+| RF-6.2  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
+| RF-6.3  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
+| RF-6.4  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
+| RF-7.1  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
+| RF-7.2  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
+| RF-7.3  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
+| RF-7.4  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
+| RF-8.1  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
+| RF-8.2  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
+| RF-8.3  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
+| RF-8.4  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
 
 -- fin entregable 2 --
 
