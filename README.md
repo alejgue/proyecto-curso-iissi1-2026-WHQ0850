@@ -130,6 +130,7 @@ La contraseña debe tener al menos 8 caracteres (length(contraseña) >= 8).
 
 ##### **R.F.1.1. Consulta de perfil**
 Como usuario, quiero ver mis datos personales registrados para verificar mi información.
+
 **Pruebas de aceptación**:
   - R.F.1.1.1 Comprobar que el usuario visualiza su nombre, apellidos, dirección y teléfono registrados.
 
@@ -510,6 +511,42 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 
 - Restricciones sobre el MC / Elementos del modelo tecnológico (SQL) (Triggers, checks, etc.)
 - Incluir Reglas de negocio — Constraints/Triggers en las matrices de trazabilidad para el entregable 3
+
+|       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
+|:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|          
+| RF-1.1  |     <p align="center"> x </p>       |           |            |           |           |           |           |           |         
+| RF-1.2  |     <p align="center"> x </p>      |            |           |          |           |           |           |           |           
+| RF-1.3  |     <p align="center"> x </p>      |           |           |           |           |           |           |           |          
+| RF-1.4  |     <p align="center"> x </p>      |            |           |           |           |           |           |           |         
+| RF-2.1  |           |     <p align="center"> x </p>       |           |           |           |           |           |           |          
+| RF-2.2  |           |     <p align="center"> x </p>       |           |           |           |           |           |           |           
+| RF-2.3  |           |      <p align="center"> x </p>      |           |           |           |           |           |           |         
+| RF-2.4  |           |      <p align="center"> x </p>      |           |           |           |           |           |           |          
+| RF-3.1  |           |            |      <p align="center"> x </p>     |           |           |           |           |           |           
+| RF-3.2 |           |            |     <p align="center"> x </p>      |           |           |           |           |           |          
+| RF-3.3 |           |            |     <p align="center"> x </p>     |           |           |           |           |           |          
+| RF-3.4  |            |           |       <p align="center"> x </p>     |           |           |           |           |           |
+| RF-4.1  |            |           |            |     <p align="center"> x </p>      |           |           |           |           |
+| RF-4.2  |            |           |            |     <p align="center"> x </p>      |           |           |           |           |
+| RF-4.3  |            |           |            |      <p align="center"> x </p>     |           |           |           |           |
+| RF-4.4  |            |           |            |      <p align="center"> x </p>     |           |           |           |           |
+| RF-5.1  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
+| RF-5.2  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
+| RF-5.3  |            |           |            |           |      <p align="center"> x </p>     |           |           |           |
+| RF-5.4  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
+| RF-6.1  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
+| RF-6.2  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
+| RF-6.3  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
+| RF-6.4  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
+| RF-7.1  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
+| RF-7.2  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
+| RF-7.3  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
+| RF-7.4  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
+| RF-8.1  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
+| RF-8.2  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
+| RF-8.3  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
+| RF-8.4  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
+
 
 |       | EntidadX   | Entidad AsociaciónX  | Reglas negocio | Entidad2 ...   | 
 |:-------|:-------|:-------|:-------|:-------|
