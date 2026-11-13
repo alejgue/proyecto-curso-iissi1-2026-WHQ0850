@@ -544,61 +544,29 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 
 |       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
 |:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|          
-| Tabla Entidad  |     <p align="center"> x </p>       |           |            |           |           |           |           |           |         
-| RF-1.2  |     <p align="center"> x </p>      |            |           |          |           |           |           |           |           
-| RF-1.3  |     <p align="center"> x </p>      |           |           |           |           |           |           |           |          
-| RF-1.4  |     <p align="center"> x </p>      |            |           |           |           |           |           |           |         
-| RF-2.1  |           |     <p align="center"> x </p>       |           |           |           |           |           |           |          
-| RF-2.2  |           |     <p align="center"> x </p>       |           |           |           |           |           |           |           
-| RF-2.3  |           |      <p align="center"> x </p>      |           |           |           |           |           |           |         
-| RF-2.4  |           |      <p align="center"> x </p>      |           |           |           |           |           |           |          
-| RF-3.1  |           |            |      <p align="center"> x </p>     |           |           |           |           |           |           
-| RF-3.2 |           |            |     <p align="center"> x </p>      |           |           |           |           |           |          
-| RF-3.3 |           |            |     <p align="center"> x </p>     |           |           |           |           |           |          
-| RF-3.4  |            |           |       <p align="center"> x </p>     |           |           |           |           |           |
-| RF-4.1  |            |           |            |     <p align="center"> x </p>      |           |           |           |           |
-| RF-4.2  |            |           |            |     <p align="center"> x </p>      |           |           |           |           |
-| RF-4.3  |            |           |            |      <p align="center"> x </p>     |           |           |           |           |
-| RF-4.4  |            |           |            |      <p align="center"> x </p>     |           |           |           |           |
-| RF-5.1  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
-| RF-5.2  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
-| RF-5.3  |            |           |            |           |      <p align="center"> x </p>     |           |           |           |
-| RF-5.4  |            |           |            |           |     <p align="center"> x </p>      |           |           |           |
-| RF-6.1  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
-| RF-6.2  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
-| RF-6.3  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
-| RF-6.4  |            |           |            |           |           |     <p align="center"> x </p>      |           |           |
-| RF-7.1  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
-| RF-7.2  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
-| RF-7.3  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
-| RF-7.4  |            |           |            |           |           |           |     <p align="center"> x </p>      |           |
-| RF-8.1  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
-| RF-8.2  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
-| RF-8.3  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
-| RF-8.4  |            |           |            |           |           |           |           |     <p align="center"> x </p>      |
+| Tabla Usuarios  |     <p align="center"> x </p>       |           |            |           |           |           |           |           |         
+| Tabla Clientes  |       |      <p align="center"> x </p>      |           |          |           |           |           |           |           
+| Tabla Gestores  |      |           |      <p align="center"> x </p>     |           |           |           |           |           |          
+| Tabla Alquileres  |           |            |           |     <p align="center"> x </p>      |           |           |           |           |         
+| Tabla Libros  |           |            |           |           |     <p align="center"> x </p>      |           |           |           |          
+| Tabla CopiasFisicas  |           |            |           |           |           |     <p align="center"> x </p>      |           |           |           
+| Tabla Sucursales  |           |            |           |           |           |           |    <p align="center"> x </p>       |           |         
+| Tabla Escritores  |           |            |           |           |           |           |           |     <p align="center"> x </p>      |          
 
 
-|       | Entidad     | Entidad AsociaciónX  | Reglas negocio | Entidad2 ...   | 
+
+|       | Entidad Genero | Entidad Asociación LibrosEscritores  | Entidad Asociación LibrosGeneros |
 |:-------|:-------|:-------|:-------|:-------|
-| TABLA-1 |        |        |        |        |
-| TABLA-2 |        |        |        |        |
-| TABLA-3 |        |        |        |        |
-| TABLA-4 |        |        |        |        |
-| TRIG-1 |        |        |        |        |
-| TRIG-2 | X      | X      |        | X      |
-| TRIG-3 |        | X      |        | X      |
-| TRIG-4 |        |        | X      |        |
-| CONST-1 |        |        |        |        |
-| CONST-2 | X      | X      |        | X      |
-| CONST-3 |        | X      |        | X      |
-| CONST-4 |        |        | X      |        |
+| TABLA-Generos |    <p align="center"> x </p>    |        |        |        
+| TABLA-LibrosEscritores |        |   <p align="center"> x </p>     |        |        
+| TABLA-LibrosGeneros |        |        |    <p align="center"> x </p>    |        
 
-|       | RN-1   | RN-2  | RN-1   | RN-1   | RN-1   |
+|       | RN-1   | RN-2  | RN-3   | RN-4   | RN-5   |  RN-6   |  RN-7   |  RN-8   |  RN-9   |  RN-10   |
 |:-------|:-------|:-------|:-------|:-------|
-| TABLA-1 |        |        |        |        |
-| TABLA-2 |        |        |        |        |
-| TABLA-3 |        |        |        |        |
-| TABLA-4 |        |        |        |        |
+| TABLA-1 |   <p align="center"> x </p>     |        |        |        |        |        |        |        |        |        |  
+| TABLA-2 |        |        |        |        |        |        |        |        |        |        |
+| TABLA-3 |        |        |        |        |        |        |        |        |        |        |
+| TABLA-4 |        |        |        |        |        |        |        |        |        |        |
 | TRIG-1 |        |        |        |        |
 | TRIG-2 | X      | X      |        | X      |
 | TRIG-3 |        | X      |        | X      |
