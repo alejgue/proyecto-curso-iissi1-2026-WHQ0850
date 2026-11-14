@@ -542,24 +542,20 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 - Incluir Reglas de negocio — Constraints/Triggers en las matrices de trazabilidad para el entregable 3
 - Entidad asociacion (tablas intermedias N a N) (tambien puede ser la asociacion en si), comentarios UML/reglas de negocio 3 trigger;
 
-|       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor | 
-|:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|          
-| Tabla Usuarios  |     <p align="center"> x </p>       |           |            |           |           |           |           |           |         
-| Tabla Clientes  |       |      <p align="center"> x </p>      |           |          |           |           |           |           |           
-| Tabla Gestores  |      |           |      <p align="center"> x </p>     |           |           |           |           |           |          
-| Tabla Alquileres  |           |            |           |     <p align="center"> x </p>      |           |           |           |           |         
-| Tabla Libros  |           |            |           |           |     <p align="center"> x </p>      |           |           |           |          
-| Tabla CopiasFisicas  |           |            |           |           |           |     <p align="center"> x </p>      |           |           |           
-| Tabla Sucursales  |           |            |           |           |           |           |    <p align="center"> x </p>       |           |         
-| Tabla Escritores  |           |            |           |           |           |           |           |     <p align="center"> x </p>      |          
+|       | Entidad Usuario | Entidad Cliente | Entidad Gestor | Entidad Alquiler | Entidad Libro | Entidad Copia_Fisica | Entidad Sucursal |  Entidad Escritor |  Entidad Genero |  
+|:------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|          
+| TABLA-Usuarios  |     <p align="center"> x </p>       |           |            |           |           |           |           |           |           |         
+| TABLA-Clientes  |       |      <p align="center"> x </p>      |           |          |           |           |           |           |           |           
+| TABLA-Gestores  |      |           |      <p align="center"> x </p>     |           |           |           |           |           |           |          
+| TABLA-Alquileres  |           |            |           |     <p align="center"> x </p>      |           |           |           |           |           |         
+| TABLA-Libros  |           |            |           |           |     <p align="center"> x </p>      |           |           |           |           |          
+| TABLA-CopiasFisicas  |           |            |           |           |           |     <p align="center"> x </p>      |           |           |           |           
+| TABLA-Sucursales  |           |            |           |           |           |           |    <p align="center"> x </p>       |           |           |         
+| TABLA-Escritores  |           |            |           |           |           |           |           |     <p align="center"> x </p>      |           |          
+| TABLA-Generos |           |            |           |           |           |           |           |           |     <p align="center"> x </p>      |           
+| TABLA-LibrosEscritores |           |            |           |         |     <p align="center"> x </p>      |          |         |     <p align="center"> x </p>  |           |    
+| TABLA-LibrosGeneros |           |            |           |           |     <p align="center"> x </p>      |         |           |          |     <p align="center"> x </p>      |      
 
-
-
-|       | Entidad Genero | Entidad Asociación LibrosEscritores  | Entidad Asociación LibrosGeneros |
-|:-------|:-------|:-------|:-------|:-------|
-| TABLA-Generos |    <p align="center"> x </p>    |        |        |        
-| TABLA-LibrosEscritores |        |   <p align="center"> x </p>     |        |        
-| TABLA-LibrosGeneros |        |        |    <p align="center"> x </p>    |        
 
 |       | RN-1   | RN-2  | RN-3   | RN-4   | RN-5   |  RN-6   |  RN-7   |  RN-8   |  RN-9   |  RN-10   |
 |:-------|:-------|:-------|:-------|:-------|
