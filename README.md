@@ -559,15 +559,11 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 
 |       | RN-1   | RN-2  | RN-3   | RN-4   | RN-5   |  RN-6   |  RN-7   |  RN-8   |  RN-9   |  RN-10   |
 |:-------|:-------|:-------|:-------|:-------|
-| TABLA-1 |   <p align="center"> x </p>     |        |        |        |        |        |        |        |        |        |  
-| TABLA-2 |        |        |        |        |        |        |        |        |        |        |
-| TABLA-3 |        |        |        |        |        |        |        |        |        |        |
-| TABLA-4 |        |        |        |        |        |        |        |        |        |        |
 | TRIG-1 |        |        |        |        |
 | TRIG-2 | X      | X      |        | X      |
 | TRIG-3 |        | X      |        | X      |
 | TRIG-4 |        |        | X      |        |
-| CONST-1 |        |        |        |        |
+| CHECK-1 |        |        |        |        |
 | CONST-2 | X      | X      |        | X      |
 | CONST-3 |        | X      |        | X      |
 | CONST-4 |        |        | X      |        |
