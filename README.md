@@ -559,15 +559,16 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 
 |       | RN-1   | RN-2  | RN-3   | RN-4   | RN-5   |  RN-6   |  RN-7   |  RN-8   |  RN-9   |  RN-10   |
 |:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|
-| TRIG-1 |    x    |        |        |        |        |        |        |        |        |        |
-| TRIG-2 |        |        |    x    |        |       |        |        |        |        |        |
-| TRIG-3 |        |        |        |        |        |    x    |        |        |        |        |
-| TRIG-4 |        |        |        |        |        |        |    x    |        |        |        |
-| TRIG-5 |        |        |        |        |        |        |        |    x    |        |        |
-| TRIG-6 |        |        |        |        |        |        |        |        |    x    |        |
-| CHECK-1 |        |        |        |        |        |        |        |        |        |   x     |
-| CHECK-2 |        |   x     |        |        |        |        |        |        |        |        |
-| CHECK-3 |        |        |        |        |        |        |        |        |   x     |        |
+| TRIG-Alquileres-1 |    x    |        |        |        |        |        |        |        |        |        |
+| TRIG-Alquileres-2 |        |        |    x    |        |       |        |        |        |        |        |
+| TRIG-Alquileres-3 |        |        |        |        |    x    |        |        |        |        |        |
+| TRIG-Alquileres-4 |        |        |        |        |        |    x    |        |        |        |        |
+| TRIG-CopiasFisicas |        |        |        |        |        |        |    x    |       |        |        |
+| TRIG-6-Clientes |        |        |        |        |        |        |        |     x    |        |        |
+| TRIG-7-Escritores |        |        |        |        |        |        |        |         |    x    |        |
+| CHECK-Usuarios |        |        |        |        |        |        |        |        |        |   x     |
+| CHECK-Alquileres |        |   x     |        |        |        |        |        |        |        |        |
+| CHECK-Escritores |        |        |        |        |        |        |        |        |   x     |        |
 
 
 Se consideran todo tipo de constraints declarativas (aquellas definidas durante el CREATE TABLE).
