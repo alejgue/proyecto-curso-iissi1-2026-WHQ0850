@@ -558,15 +558,17 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 
 
 |       | RN-1   | RN-2  | RN-3   | RN-4   | RN-5   |  RN-6   |  RN-7   |  RN-8   |  RN-9   |  RN-10   |
-|:-------|:-------|:-------|:-------|:-------|
-| TRIG-1 |        |        |        |        |
-| TRIG-2 | X      | X      |        | X      |
-| TRIG-3 |        | X      |        | X      |
-| TRIG-4 |        |        | X      |        |
-| CHECK-1 |        |        |        |        |
-| CONST-2 | X      | X      |        | X      |
-| CONST-3 |        | X      |        | X      |
-| CONST-4 |        |        | X      |        |
+|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|
+| TRIG-1 |    x    |        |        |        |        |        |        |        |        |        |
+| TRIG-2 |        |        |    x    |        |   x     |        |        |        |        |        |
+| TRIG-3 |        |        |        |        |        |    x    |        |        |        |        |
+| TRIG-4 |        |        |        |        |        |        |    x    |        |        |        |
+| TRIG-5 |        |        |        |        |        |        |        |    x    |        |        |
+| TRIG-6 |        |        |        |        |        |        |        |        |    x    |        |
+| CHECK-1 |        |        |        |        |        |        |        |        |        |        |
+| CHECK-2 |        |        |        |        |        |        |        |        |        |        |
+| CHECK-3 |        |        |        |        |        |        |        |        |        |        |
+| CHECK-4 |        |        |        |        |        |        |        |        |        |        |
 
 Se consideran todo tipo de constraints declarativas (aquellas definidas durante el CREATE TABLE).
 -- fin entregable 3 --
