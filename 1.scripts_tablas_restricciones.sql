@@ -1,7 +1,7 @@
 CREATE TABLE Usuarios (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nombre VARCHAR(255) NOT NULL,
-	contraseña VARCHAR(255) NOT NULL CHECK (CHAR_LENGTH(contraseña) >= 8),
+	contraseña VARCHAR(255) NOT NULL CHECK (CHAR_LENGTH(contraseña) >= 8), -- CHECK-1
 	telefono VARCHAR(30) NOT NULL UNIQUE,
 	apellido VARCHAR(255) NOT NULL,
 	direccion VARCHAR(255) NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE Alquileres (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	fechaAlquiler DATE NOT NULL,
 	fechaLimiteDevolucion DATE NOT NULL,
-	fechaDevolucionEfectiva DATE CHECK (fechaDevolucionEfectiva IS NULL OR fechaDevolucionEfectiva > fechaAlquiler),
+	fechaDevolucionEfectiva DATE CHECK (fechaDevolucionEfectiva IS NULL OR fechaDevolucionEfectiva > fechaAlquiler),  -- CHECK-2
 	clienteId INT NOT NULL,
 	copiaFisicaCodigoBarras VARCHAR(20) NOT NULL,
 	FOREIGN KEY(clienteId) REFERENCES Clientes(id),
@@ -100,7 +100,7 @@ CREATE TABLE Escritores (
 	apellido VARCHAR(255) NOT NULL,
 	biografia TEXT NOT NULL,
 	fechaNacimiento DATE NOT NULL,
-	fechaMuerte DATE CHECK (fechaMuerte IS NULL OR fechaMuerte > fechaNacimiento)
+	fechaMuerte DATE CHECK (fechaMuerte IS NULL OR fechaMuerte > fechaNacimiento) -- CHECK-3
 );
 
 CREATE TABLE LibrosEscritores (
