@@ -559,16 +559,16 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 
 |       | RN-1   | RN-2  | RN-3   | RN-4   | RN-5   |  RN-6   |  RN-7   |  RN-8   |  RN-9   |  RN-10   |
 |:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|
-| TRIG-Alquileres-1 |    x    |        |        |        |        |        |        |        |        |        |
-| TRIG-Alquileres-2 |        |        |    x    |        |       |        |        |        |        |        |
-| TRIG-Alquileres-3 |        |        |        |        |    x    |        |        |        |        |        |
-| TRIG-Alquileres-4 |        |        |        |        |        |    x    |        |        |        |        |
-| TRIG-CopiasFisicas |        |        |        |        |        |        |    x    |       |        |        |
-| TRIG-Clientes |        |        |        |        |        |        |        |     x    |        |        |
-| TRIG-Escritores |        |        |        |        |        |        |        |         |    x    |        |
-| CHECK-Usuarios |        |        |        |        |        |        |        |        |        |   x     |
-| CHECK-Alquileres |        |   x     |        |        |        |        |        |        |        |        |
-| CHECK-Escritores |        |        |        |        |        |        |        |        |   x     |        |
+| TRIG-Alquileres-1 |     <p align="center"> x </p>     |        |        |        |        |        |        |        |        |        |
+| TRIG-Alquileres-2 |        |        |     <p align="center"> x </p>    |        |       |        |        |        |        |        |
+| TRIG-Alquileres-3 |        |        |        |        |        |        |        |        |        |        |
+| TRIG-Alquileres-4 |        |        |        |        |        |    <p align="center"> x </p>     |        |        |        |        |
+| TRIG-CopiasFisicas |        |        |        |        |        |        |     <p align="center"> x </p>     |       |        |        |
+| TRIG-Clientes |        |        |        |        |        |        |        |      <p align="center"> x </p>     |        |        |
+| TRIG-Escritores |        |        |        |        |        |        |        |         |     <p align="center"> x </p>     |        |
+| CHECK-Usuarios |        |        |        |        |        |        |        |        |        |    <p align="center"> x </p>     |
+| CHECK-Alquileres |        |    <p align="center"> x </p>      |        |        |        |        |        |        |        |        |
+| CHECK-Escritores |        |        |        |        |        |        |        |        |    <p align="center"> x </p>      |        |
 
 
 Se consideran todo tipo de constraints declarativas (aquellas definidas durante el CREATE TABLE).
