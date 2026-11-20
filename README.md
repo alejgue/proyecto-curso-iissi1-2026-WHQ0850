@@ -564,8 +564,8 @@ Un cliente puede alquilar el mismo libro varias veces a lo largo del año. Por e
 | TRIG-Alquileres-3 |        |        |        |        |    x    |        |        |        |        |        |
 | TRIG-Alquileres-4 |        |        |        |        |        |    x    |        |        |        |        |
 | TRIG-CopiasFisicas |        |        |        |        |        |        |    x    |       |        |        |
-| TRIG-6-Clientes |        |        |        |        |        |        |        |     x    |        |        |
-| TRIG-7-Escritores |        |        |        |        |        |        |        |         |    x    |        |
+| TRIG-Clientes |        |        |        |        |        |        |        |     x    |        |        |
+| TRIG-Escritores |        |        |        |        |        |        |        |         |    x    |        |
 | CHECK-Usuarios |        |        |        |        |        |        |        |        |        |   x     |
 | CHECK-Alquileres |        |   x     |        |        |        |        |        |        |        |        |
 | CHECK-Escritores |        |        |        |        |        |        |        |        |   x     |        |
